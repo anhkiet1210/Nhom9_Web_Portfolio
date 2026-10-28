@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lương Thanh Tọa | Portfolio</title> 
+  <meta name="description" content="Portfolio / Digital CV của Lương Thanh Tọa">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Bricolage+Grotesque:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="road" aria-hidden="true"><span id="bus">🚌</span></div>
+
+  <!-- 1. HEADER / NAVBAR -->
+  <header class="header">
+    <nav class="nav container" aria-label="Menu chính">
+      <a href="#home" class="logo">LTT<span>.</span></a>
+      <ul class="menu" id="menu">
+        <li><a href="#about">Giới thiệu</a></li>
+        <li><a href="#objective">Mục tiêu</a></li>
+        <li><a href="#skills">Kỹ năng</a></li>
+        <li><a href="#education">Học vấn</a></li>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#extras">Sở thích</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeBtn" class="icon-btn" aria-label="Bật/tắt chế độ tối">🌙</button>
+        <button id="menuBtn" class="icon-btn menu-btn" aria-label="Mở menu" aria-expanded="false">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- BANNER -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <div>
+          <p class="hello">Xin chào, mình là</p>
+          <h1>Lương Thanh Tọa</h1> <!-- SỬA -->
+          <p class="typing">Mình là <span id="typed"></span><span class="caret">|</span></p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn">Xem dự án</a>
+            <a href="#contact" class="btn btn-ghost">Liên hệ mình</a>
+          </div>
+        </div>
+        <img class="hero-img" src="images/avata.jpg" alt="Ảnh đại diện của tôi">
+      </div>
+    </section>
+
+    <!-- 2. GIỚI THIỆU -->
+    <section id="about" class="section">
+      <div class="container about">
+        <img src="images/avata.jpg" alt="Ảnh chân dung" class="about-img">
+        <div>
+          <h2>Giới thiệu bản thân</h2>
+          <ul class="info">
+            <li><b>Họ tên:</b> Lương Thanh Tọa</li>
+            <li><b>Ngành học:</b> Công nghệ thông tin – ĐH Giao thông vận tải TP.HCM</li>
+            <li><b>Định hướng:</b> Lập trình Web Front-end</li>
+          </ul>
+          <p>Mình là sinh viên năm 2 yêu thích thiết kế giao diện và xây dựng các website dễ dùng. Mình thích học công nghệ mới, làm việc nhóm và biến ý tưởng thành sản phẩm chạy được.</p> <!-- SỬA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MỤC TIÊU -->
+    <section id="objective" class="section alt">
+      <div class="container narrow">
+        <h2>Mục tiêu nghề nghiệp</h2>
+        <blockquote>Trở thành lập trình viên Front-end chuyên nghiệp trong 2 năm tới, tham gia các dự án thực tế và xây dựng sản phẩm số phục vụ ngành giao thông – logistics.</blockquote> <!-- SỬA -->
+      </div>
+    </section>
+
+    <!-- 4. KỸ NĂNG -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2>Kỹ năng</h2>
+        <div class="skills">
+          <div class="skill"><span>HTML5</span><div class="bar"><i data-level="60"></i></div></div>
+          <div class="skill"><span>CSS3</span><div class="bar"><i data-level="50"></i></div></div>
+          <div class="skill"><span>JavaScript</span><div class="bar"><i data-level="50"></i></div></div>
+          <div class="skill"><span>Python</span><div class="bar"><i data-level="30"></i></div></div>
+          <div class="skill"><span>Java</span><div class="bar"><i data-level="50"></i></div></div>
+          <div class="skill"><span>Git / GitHub</span><div class="bar"><i data-level="75"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. HỌC VẤN / KINH NGHIỆM -->
+    <section id="education" class="section alt">
+      <div class="container">
+        <h2>Học vấn &amp; Kinh nghiệm</h2>
+        <div class="timeline">
+          <article class="t-item"><time>2024 </time><h3>ĐH Giao thông vận tải TP.HCM</h3><p>Sinh viên ngành Công nghệ thông tin.</p></article>
+          <article class="t-item"><time>2025 – 2026(nay)</time><h3>Hoạt động &amp; thành tích</h3><p>Chưa có hoạt động hoặc thành tích nổi bật.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. DỰ ÁN -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Dự án cá nhân</h2>
+        <div class="filters" role="group" aria-label="Lọc dự án">
+          <button class="chip active" data-filter="all">Tất cả</button>
+          <button class="chip" data-filter="web">Web</button>
+          <button class="chip" data-filter="app">Ứng dụng</button>
+        </div>
+        <div class="grid">
+          <article class="card" data-cat="app">
+            <img src="images/duanuth.jpg" alt="Ảnh dự án UTH Lab Monitor">
+            <div class="card-body">
+              <h3>UTH Lab Monitor</h3>
+              <p>Hệ thống mô phỏng giám sát phòng máy UTH qua mạng LAN.</p>
+              <p class="tech">C# · WinForms · TCP/UDP</p>
+              <div class="card-links"><button class="link-btn" data-modal="0">Chi tiết</button><a href="https://github.com/toaluong/uth-lab-monitor" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
+          <article class="card" data-cat="web">
+            <img src="images/duanweb.png" alt="Ảnh dự án Secondhand Marketplace">
+            <div class="card-body">
+              <h3>Secondhand Marketplace</h3>
+              <p>Nền tảng mua bán đồ cũ (secondhand).</p>
+              <p class="tech">Xem công nghệ chi tiết trên GitHub(vẫn trong quá trình hoàn thiện web)</p>
+              <div class="card-links"><button class="link-btn" data-modal="1">Chi tiết</button><a href="https://github.com/anhkiet1210/secondhand-marketplace" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CHỨNG CHỈ / GIẢI THƯỞNG / SỞ THÍCH -->
+    <section id="extras" class="section alt">
+      <div class="container extras">
+        <div><h2>Sở thích</h2><ul><li>Chơi đá bóng</li><li>Chơi game</li><li>Ăn uống</li></ul></div>
+      </div>
+    </section>
+
+    <!-- 15. LIÊN HỆ -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <div>
+          <h2>Liên hệ</h2>
+          <p>Email: <a href="lttoa101006@gmail.com">lttoa101006@gmail.com</a></p>
+          <p>Điện thoại: 0393453417</p>
+          <p>GitHub: <a href="https://github.com/toaluong" target="_blank" rel="noopener">github.com/toaluong</a></p>
+        </div>
+        <form id="contactForm" novalidate>
+          <label>Họ tên<input type="text" id="name" name="name"><small class="err"></small></label>
+          <label>Email<input type="email" id="email" name="email"><small class="err"></small></label>
+          <label>Nội dung<textarea id="msg" name="msg" rows="4"></textarea><small class="err"></small></label>
+          <button type="submit" class="btn">Gửi tin nhắn</button>
+          <p id="formOk" class="ok" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><p>© 2026 Lương Thanh Tọa.</p></footer>
+
+  <button id="topBtn" class="top-btn" aria-label="Lên đầu trang">↑</button>
+
+  <dialog id="modal">
+    <h3 id="mTitle"></h3><p id="mText"></p>
+    <button class="btn" id="mClose">Đóng</button>
+  </dialog>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
