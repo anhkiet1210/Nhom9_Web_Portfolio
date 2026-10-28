@@ -1,0 +1,1511 @@
+/* ==========================================================================
+   1. BIẾN MÀU SẮC & CÀI ĐẶT CƠ BẢN (CSS VARIABLES & RESET)
+   ========================================================================== */
+:root {
+    --bg-primary: #090d16;
+    --bg-secondary: #111827;
+    --card-bg: rgba(30, 41, 59, 0.45);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --card-border-hover: rgba(56, 189, 248, 0.55);
+
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+
+    --accent-cyan: #38bdf8;
+    --accent-indigo: #6366f1;
+    --accent-purple: #c084fc;
+    --accent-emerald: #10b981;
+
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.65;
+    overflow-x: hidden;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. HIỆU ỨNG NỀN & THẺ KÍNH (AMBIENT GLOW & GLASSMORPHISM)
+   ========================================================================== */
+.bg-glow {
+    position: fixed;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    filter: blur(130px);
+    opacity: 0.18;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.glow-1 {
+    top: 8%;
+    left: 10%;
+    background: var(--accent-cyan);
+}
+
+.glow-2 {
+    bottom: 12%;
+    right: 8%;
+    background: var(--accent-purple);
+}
+
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.glass-card:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.2);
+    transform: translateY(-4px);
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   3. THANH ĐIỀU HƯỚNG (NAVBAR)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(9, 13, 22, 0.78);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74px;
+}
+
+.logo {
+    font-family: var(--font-mono);
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.code-bracket {
+    color: var(--accent-cyan);
+}
+
+.code-slash {
+    color: var(--accent-purple);
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-item {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    position: relative;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--accent-cyan);
+}
+
+.nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-cyan);
+    transition: var(--transition);
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   4. NÚT BẤM (BUTTONS)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-indigo));
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.25);
+}
+
+.btn-primary:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text-main);
+}
+
+.btn-glass:hover {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+.btn-outline {
+    padding: 9px 18px;
+    border: 1px solid rgba(56, 189, 248, 0.45);
+    color: var(--accent-cyan);
+    background: rgba(56, 189, 248, 0.08);
+    font-size: 0.88rem;
+}
+
+.btn-outline:hover {
+    background: var(--accent-cyan);
+    color: #090d16;
+}
+
+/* ==========================================================================
+   5. HERO SECTION
+   ========================================================================== */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 70px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-author-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-avatar-wrapper {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+}
+
+.hero-avatar-sm {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+    display: block;
+}
+
+.avatar-online-dot {
+    position: absolute;
+    bottom: 1px;
+    right: 1px;
+    width: 11px;
+    height: 11px;
+    background: var(--accent-emerald);
+    border: 2px solid var(--bg-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 6px var(--accent-emerald);
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: #34d399;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-emerald);
+    box-shadow: 0 0 10px var(--accent-emerald);
+}
+
+.hero-title {
+    font-size: 3.1rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.hero-meta i {
+    color: var(--accent-cyan);
+    margin-right: 4px;
+}
+
+/* Khung Terminal chạy chữ */
+.quote-terminal {
+    margin-bottom: 28px;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: rgba(15, 23, 42, 0.85);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+}
+
+.dot.red {
+    background: #ef4444;
+}
+
+.dot.yellow {
+    background: #f59e0b;
+}
+
+.dot.green {
+    background: #10b981;
+}
+
+.terminal-title {
+    margin-left: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.terminal-body {
+    padding: 18px 20px;
+    min-height: 84px;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: #e2e8f0;
+}
+
+.prompt-sign {
+    color: var(--accent-emerald);
+    margin-right: 8px;
+    font-weight: 700;
+}
+
+.cursor {
+    color: var(--accent-cyan);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+/* ==================== CỘT PHẢI HERO (ẢNH & CODE) ==================== */
+.hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Thẻ ảnh chân dung */
+.profile-photo-card {
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-frame {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0f172a;
+}
+
+.profile-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+
+.profile-photo-card:hover .profile-photo-img {
+    transform: scale(1.04);
+}
+
+.photo-glow-border {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 16px;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px rgba(56, 189, 248, 0.12);
+}
+
+/* Huy hiệu nổi trên ảnh */
+.floating-badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(15, 23, 42, 0.82);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-main);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.floating-badge i {
+    color: var(--accent-cyan);
+}
+
+.floating-badge.badge-top {
+    top: 14px;
+    left: 14px;
+}
+
+.floating-badge.badge-bottom {
+    bottom: 14px;
+    right: 14px;
+}
+
+.floating-badge:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 26px rgba(56, 189, 248, 0.25);
+}
+
+/* Chân thẻ ảnh */
+.photo-caption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+    padding: 0 4px;
+}
+
+.photo-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.photo-role {
+    font-size: 0.82rem;
+    color: var(--accent-purple);
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.photo-upload-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.28);
+    color: var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.photo-upload-btn:hover {
+    background: var(--accent-cyan);
+    color: #090d16;
+    transform: scale(1.08);
+    box-shadow: 0 0 16px rgba(56, 189, 248, 0.45);
+}
+
+/* Thẻ Code bên phải Hero */
+.code-card {
+    overflow: hidden;
+}
+
+.code-card-header {
+    background: rgba(15, 23, 42, 0.9);
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--card-border);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent-cyan);
+}
+
+.code-content {
+    padding: 22px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    line-height: 1.75;
+    overflow-x: auto;
+}
+
+.kw {
+    color: #c084fc;
+}
+
+.cls {
+    color: #38bdf8;
+}
+
+.fn {
+    color: #60a5fa;
+}
+
+.self {
+    color: #f472b6;
+}
+
+.str {
+    color: #34d399;
+}
+
+/* ==========================================================================
+   6. BỐ CỤC CHUNG CHO CÁC SECTION
+   ========================================================================== */
+.section {
+    padding: 90px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 54px;
+}
+
+.section-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--accent-cyan);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.title-underline {
+    width: 64px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   7. GIỚI THIỆU BẢN THÂN (ABOUT SECTION)
+   ========================================================================== */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 28px;
+}
+
+.about-card {
+    padding: 34px;
+}
+
+.about-text {
+    color: #cbd5e1;
+    margin-bottom: 18px;
+    font-size: 1.02rem;
+}
+
+.highlight-quote {
+    margin-top: 24px;
+    padding: 18px 22px;
+    background: rgba(15, 23, 42, 0.65);
+    border-left: 4px solid var(--accent-cyan);
+    border-radius: 0 12px 12px 0;
+    font-style: italic;
+    color: var(--accent-cyan);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.quote-icon {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-top: 4px;
+}
+
+.about-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.stat-box {
+    padding: 22px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.stat-box h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.stat-box p {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   8. HỌC VẤN (EDUCATION TIMELINE)
+   ========================================================================== */
+.timeline {
+    max-width: 840px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 32px;
+    border-left: 2px solid rgba(56, 189, 248, 0.35);
+}
+
+.timeline-item {
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -41px;
+    top: 28px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    box-shadow: 0 0 0 6px rgba(56, 189, 248, 0.18);
+}
+
+.timeline-content {
+    padding: 32px;
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.timeline-date {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent-cyan);
+}
+
+.timeline-tag {
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    font-weight: 600;
+}
+
+.timeline-school {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.timeline-major {
+    font-size: 1rem;
+    color: var(--accent-purple);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.timeline-desc {
+    color: var(--text-muted);
+    font-size: 0.96rem;
+}
+
+/* Chỉ số học tập (GPA & Tín chỉ) */
+.edu-metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.edu-metric-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    transition: var(--transition);
+}
+
+.edu-metric-card:hover {
+    border-color: rgba(56, 189, 248, 0.45);
+    background: rgba(15, 23, 42, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px -8px rgba(56, 189, 248, 0.2);
+}
+
+.edu-metric-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.edu-metric-icon.gpa {
+    background: rgba(16, 185, 129, 0.14);
+    color: var(--accent-emerald);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.edu-metric-icon.credits {
+    background: rgba(56, 189, 248, 0.14);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.edu-metric-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.edu-metric-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.edu-metric-value {
+    font-family: var(--font-mono);
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--text-main);
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.edu-metric-max {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.edu-metric-icon.progress-icon {
+    background: rgba(245, 158, 11, 0.14);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* ==========================================================================
+   8.1. TIẾN ĐỘ HỌC TẬP (ACADEMIC PROGRESS BAR & MILESTONES)
+   ========================================================================== */
+.edu-progress-box {
+    margin-top: 24px;
+    padding: 22px 24px;
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    transition: var(--transition);
+}
+
+.edu-progress-box:hover {
+    border-color: rgba(56, 189, 248, 0.35);
+    background: rgba(15, 23, 42, 0.75);
+}
+
+.edu-progress-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.edu-progress-label-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.edu-progress-label-wrap i {
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+}
+
+.edu-progress-pct-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 4px 14px;
+    border-radius: 999px;
+}
+
+.edu-progress-pct-badge .pct-val {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent-cyan);
+}
+
+.edu-progress-pct-badge .pct-detail {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.edu-progress-track {
+    width: 100%;
+    height: 10px;
+    background: #0b1120;
+    border-radius: 999px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-bottom: 18px;
+}
+
+.edu-progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #38bdf8 0%, #6366f1 70%, #c084fc 100%);
+    border-radius: 999px;
+    position: relative;
+    box-shadow: 0 0 14px rgba(56, 189, 248, 0.5);
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.edu-progress-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    animation: progressShine 2.5s infinite;
+}
+
+@keyframes progressShine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.edu-milestones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.milestone-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.milestone-indicator {
+    font-size: 0.95rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.milestone-step.done .milestone-indicator {
+    color: var(--accent-emerald);
+}
+
+.milestone-step.active .milestone-indicator {
+    color: var(--accent-cyan);
+}
+
+.milestone-step.planned .milestone-indicator {
+    color: #475569;
+}
+
+.milestone-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.milestone-text .m-year {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.milestone-step.active .milestone-text .m-year {
+    color: var(--accent-cyan);
+}
+
+.milestone-text .m-status {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin-top: 3px;
+}
+
+/* ==========================================================================
+   8.2. MỤC TIÊU PHÁT TRIỂN DEVELOPER (CAREER GOALS & ROADMAP)
+   ========================================================================== */
+.career-goals-section {
+    margin-top: 48px;
+}
+
+.goals-section-header {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 36px;
+}
+
+.goals-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-family: var(--font-mono);
+    color: #a5b4fc;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.goals-main-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.goals-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.goals-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.goal-card {
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.goal-card.short-term-card {
+    border-color: rgba(56, 189, 248, 0.22);
+}
+
+.goal-card.short-term-card:hover {
+    border-color: rgba(56, 189, 248, 0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -12px rgba(56, 189, 248, 0.22);
+}
+
+.goal-card.long-term-card {
+    border-color: rgba(192, 132, 252, 0.22);
+}
+
+.goal-card.long-term-card:hover {
+    border-color: rgba(192, 132, 252, 0.55);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -12px rgba(192, 132, 252, 0.22);
+}
+
+.goal-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.goal-icon-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.goal-icon-badge.cyan-badge {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.goal-icon-badge.purple-badge {
+    background: rgba(192, 132, 252, 0.15);
+    color: var(--accent-purple);
+    border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.goal-card-title-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.goal-phase-pill {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.goal-phase-pill.cyan-pill {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.goal-phase-pill.purple-pill {
+    background: rgba(192, 132, 252, 0.15);
+    color: var(--accent-purple);
+    border: 1px solid rgba(192, 132, 252, 0.25);
+}
+
+.goal-card-heading {
+    font-size: 1.25rem;
+    color: var(--text-main);
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.goal-target-role {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.goal-target-role i {
+    color: #cbd5e1;
+}
+
+.goal-checklist {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.goal-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.check-icon {
+    font-size: 1.05rem;
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.check-icon.cyan {
+    color: var(--accent-cyan);
+}
+
+.check-icon.purple {
+    color: var(--accent-purple);
+}
+
+.check-content strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.check-content p {
+    font-size: 0.86rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   9. KỸ NĂNG & CÔNG CỤ (SKILLS & TOOLS)
+   ========================================================================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+}
+
+.skill-card {
+    padding: 30px;
+}
+
+.skill-card-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+}
+
+.skill-icon-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+}
+
+.skill-icon-box.blue {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-cyan);
+}
+
+.skill-icon-box.purple {
+    background: rgba(192, 132, 252, 0.15);
+    color: var(--accent-purple);
+}
+
+.skill-icon-box.green {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-emerald);
+}
+
+.skill-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+/* Thanh kỹ năng */
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.skill-tag {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.progress-line {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.progress-line .fill {
+    display: block;
+    height: 100%;
+    border-radius: 99px;
+    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-indigo));
+}
+
+.python-fill {
+    width: 88%;
+}
+
+.cpp-fill {
+    width: 85%;
+}
+
+.html-fill {
+    width: 90%;
+}
+
+.css-fill {
+    width: 86%;
+}
+
+/* Thẻ Công cụ */
+.badge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.tool-badge {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--card-border);
+}
+
+.tool-icon {
+    font-size: 1.6rem;
+}
+
+.git-color {
+    color: #f97316;
+}
+
+.vscode-color {
+    color: #38bdf8;
+}
+
+.antigravity-color {
+    color: #c084fc;
+}
+
+.tool-badge h5 {
+    font-size: 0.95rem;
+}
+
+.tool-badge span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Danh sách Kỹ năng mềm */
+.soft-skill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.soft-skill-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.soft-skill-list i {
+    color: var(--accent-emerald);
+    margin-top: 5px;
+}
+
+.soft-skill-list strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+.soft-skill-list p {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   10. LIÊN HỆ & FOOTER (CONTACT & FOOTER)
+   ========================================================================== */
+.contact-box {
+    padding: 50px 36px;
+    text-align: center;
+}
+
+.contact-slogan {
+    max-width: 620px;
+    margin: 12px auto 36px;
+    color: var(--text-muted);
+}
+
+.contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--card-border);
+}
+
+.contact-item:hover {
+    border-color: var(--accent-cyan);
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+.contact-detail span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.contact-detail strong {
+    font-size: 0.95rem;
+    word-break: break-all;
+}
+
+.footer {
+    padding: 30px 0;
+    border-top: 1px solid var(--card-border);
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.footer-quote {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    margin-top: 6px;
+    color: var(--accent-cyan);
+}
+
+/* ==========================================================================
+   11. TƯƠNG THÍCH MÀN HÌNH (RESPONSIVE MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 992px) {
+
+    .hero-grid,
+    .about-grid,
+    .skills-grid,
+    .contact-cards,
+    .goals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .profile-photo-card {
+        max-width: 460px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .code-card {
+        max-width: 460px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-cta {
+        display: none;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: rgba(9, 13, 22, 0.96);
+        flex-direction: column;
+        align-items: center;
+        padding: 24px 0;
+        gap: 20px;
+        border-bottom: 1px solid var(--card-border);
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hero-title {
+        font-size: 2.1rem;
+    }
+
+    .photo-frame {
+        height: 250px;
+    }
+
+    .edu-milestones {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .goal-card {
+        padding: 24px 20px;
+    }
+}

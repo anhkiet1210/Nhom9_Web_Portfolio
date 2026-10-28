@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phạm Hồng Thái | Portfolio Cá Nhân</title>
+
+    <!-- Google Fonts: Inter & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Liên kết tới file style.css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Hiệu ứng ánh sáng nền (Ambient Background Glow) -->
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <!-- ==================== THANH ĐIỀU HƯỚNG (NAVBAR) ==================== -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="code-bracket">&lt;</span>PHT<span class="code-slash">/&gt;</span>
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#home" class="nav-item active">Trang chủ</a>
+                <a href="#about" class="nav-item">Giới thiệu</a>
+                <a href="#education" class="nav-item">Học vấn</a>
+                <a href="#skills" class="nav-item">Kỹ năng</a>
+                <a href="#contact" class="nav-item">Liên hệ</a>
+            </nav>
+
+            <a href="#contact" class="btn btn-outline nav-cta">Kết nối ngay</a>
+
+            <!-- Nút menu trên điện thoại -->
+            <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Mở menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- ==================== 1. HERO SECTION ==================== -->
+        <section id="home" class="hero-section">
+            <div class="container hero-grid">
+
+                <!-- Cột trái: Thông tin chính -->
+                <div class="hero-content">
+                    <div class="hero-author-header">
+                        <div class="hero-avatar-wrapper" title="Ảnh đại diện Phạm Hồng Thái">
+                            <img src="Thai.png" alt="Phạm Hồng Thái" class="hero-avatar-sm profile-avatar-target"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80'">
+                            <span class="avatar-online-dot" title="Sẵn sàng học tập & kết nối"></span>
+                        </div>
+                        <div class="status-badge">
+                            <span class="status-dot"></span>
+                            <span>Sinh viên Công nghệ Thông tin @ UTH (2025 – 2029)</span>
+                        </div>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Xin chào, tôi là <br>
+                        <span class="gradient-text">Phạm Hồng Thái</span>
+                    </h1>
+
+                    <div class="hero-meta">
+                        <span><i class="fa-regular fa-calendar-check"></i> 27/02/2007</span>
+                        <span class="meta-divider">•</span>
+                        <span><i class="fa-solid fa-location-dot"></i> TP. Hồ Chí Minh</span>
+                    </div>
+
+                    <!-- Khung chạy chữ Typewriter -->
+                    <div class="quote-terminal glass-card">
+                        <div class="terminal-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="terminal-title">quote_of_the_day.sh</span>
+                        </div>
+                        <div class="terminal-body">
+                            <span class="prompt-sign">$</span>
+                            <span id="typewriter" class="typewriter-text"></span><span class="cursor">|</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a href="#skills" class="btn btn-primary">
+                            <i class="fa-solid fa-layer-group"></i> Khám phá Kỹ năng
+                        </a>
+                        <a href="#contact" class="btn btn-glass">
+                            <i class="fa-regular fa-paper-plane"></i> Liên hệ hợp tác
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cột phải: Ảnh chân dung cá nhân & Thẻ Code minh họa Profile -->
+                <div class="hero-visual">
+                    <!-- Khung hình ảnh cá nhân -->
+                    <div class="profile-photo-card glass-card">
+                        <div class="photo-frame">
+                            <img src="Thai.png" alt="Ảnh chân dung Phạm Hồng Thái"
+                                class="profile-photo-img profile-avatar-target"
+                                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+
+                            <!-- Hiệu ứng viền phát sáng -->
+                            <div class="photo-glow-border"></div>
+
+                            <!-- Huy hiệu nổi (Floating Badges) -->
+                            <div class="floating-badge badge-top">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                <span>UTH Student</span>
+                            </div>
+                            <div class="floating-badge badge-bottom">
+                                <i class="fa-solid fa-code"></i>
+                                <span>Gen Z Developer</span>
+                            </div>
+                        </div>
+
+                        <!-- Chân thẻ ảnh: Thông tin & Nút tải ảnh xem trước -->
+                        <div class="photo-caption">
+                            <div class="photo-meta">
+                                <h3 class="photo-name">Phạm Hồng Thái</h3>
+                                <p class="photo-role"><i class="fa-solid fa-user-astronaut"></i> IT Student @ UTH (2025 – 2029)</p>
+                            </div>
+                            <label for="avatar-input" class="photo-upload-btn" title="Chọn ảnh từ máy tính để xem trước">
+                                <i class="fa-solid fa-camera"></i>
+                                <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Thẻ Code minh họa Profile -->
+                    <div class="code-card glass-card">
+                        <div class="code-card-header">
+                            <span class="file-tab"><i class="fa-brands fa-python"></i> developer_profile.py</span>
+                        </div>
+                        <pre
+                            class="code-content"><code><span class="kw">class</span> <span class="cls">ITStudent</span>:
+    <span class="kw">def</span> <span class="fn">__init__</span>(<span class="self">self</span>):
+        <span class="self">self</span>.name = <span class="str">"Phạm Hồng Thái"</span>
+        <span class="self">self</span>.dob = <span class="str">"27/02/2007"</span>
+        <span class="self">self</span>.university = <span class="str">"UTH - TP.HCM"</span>
+        <span class="self">self</span>.cohort = <span class="str">"2025 - 2029"</span>
+        <span class="self">self</span>.languages = [<span class="str">"Python"</span>, <span class="str">"C++"</span>, <span class="str">"HTML"</span>, <span class="str">"CSS"</span>]
+        <span class="self">self</span>.tools = [<span class="str">"Git"</span>, <span class="str">"VS Code"</span>, <span class="str">"Antigravity IDE"</span>]
+
+    <span class="kw">def</span> <span class="fn">daily_goal</span>(<span class="self">self</span>):
+        <span class="kw">return</span> <span class="str">"First, solve the problem. Then, write the code."</span></code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==================== 2. GIỚI THIỆU BẢN THÂN (ABOUT ME) ==================== -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">01. ABOUT ME</span>
+                    <h2 class="section-title">Về Bản Thân Tôi</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card glass-card">
+                        <p class="about-text">
+                            Là một sinh viên Công nghệ Thông tin thế hệ Gen Z tại <strong>Trường Đại học Giao thông Vận
+                                tải TP. Hồ Chí Minh (UTH)</strong>, tôi mang trong mình niềm đam mê lớn với việc biến
+                            những ý tưởng sáng tạo thành giải pháp phần mềm thực tế.
+                        </p>
+                        <p class="about-text">
+                            Tôi rèn luyện tư duy thuật toán và cấu trúc logic chặt chẽ thông qua <strong>C++</strong> và
+                            <strong>Python</strong>, đồng thời yêu thích việc chăm chút từng chi tiết giao diện người
+                            dùng bằng <strong>HTML5 & CSS3</strong>. Với tinh thần ham học hỏi, kỷ luật cá nhân và khả
+                            năng phối hợp nhóm hiệu quả, tôi luôn sẵn sàng đón nhận những thử thách công nghệ mới.
+                        </p>
+
+                        <blockquote class="highlight-quote">
+                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                            <p>"Sự kiên trì hôm nay là thuật toán tối ưu nhất cho thành công của ngày mai."</p>
+                        </blockquote>
+                    </div>
+
+                    <!-- Các thông số điểm nhấn -->
+                    <div class="about-highlights">
+                        <div class="stat-box glass-card">
+                            <div class="stat-icon"><i class="fa-solid fa-brain"></i></div>
+                            <div>
+                                <h4>Tư duy Logic & Thuật toán</h4>
+                                <p>Nền tảng vững chắc với C++ & Python</p>
+                            </div>
+                        </div>
+                        <div class="stat-box glass-card">
+                            <div class="stat-icon"><i class="fa-solid fa-palette"></i></div>
+                            <div>
+                                <h4>Sáng tạo Giao diện</h4>
+                                <p>Thiết kế Web hiện đại, chuẩn Responsive với HTML/CSS</p>
+                            </div>
+                        </div>
+                        <div class="stat-box glass-card">
+                            <div class="stat-icon"><i class="fa-solid fa-users-gear"></i></div>
+                            <div>
+                                <h4>Tinh thần Đồng đội</h4>
+                                <p>Quản lý mã nguồn với Git, giao tiếp và quản lý thời gian tốt</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. HỌC VẤN (EDUCATION TIMELINE & ROADMAP) ==================== -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">02. EDUCATION & ROADMAP</span>
+                    <h2 class="section-title">Hành Trình Học Vấn & Mục Tiêu</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-card">
+                            <div class="timeline-header">
+                                <span class="timeline-date">
+                                    <i class="fa-regular fa-calendar"></i> Niên khóa: 2025 – 2029
+                                </span>
+                                <span class="timeline-tag">Đang theo học</span>
+                            </div>
+                            <h3 class="timeline-school">
+                                Trường Đại học Giao thông Vận tải TP. Hồ Chí Minh (UTH)
+                            </h3>
+                            <h4 class="timeline-major">
+                                <i class="fa-solid fa-graduation-cap"></i> Ngành: Công nghệ Thông tin (Information
+                                Technology)
+                            </h4>
+                            <p class="timeline-desc">
+                                Tập trung xây dựng nền tảng cốt lõi về lập trình hướng đối tượng, cấu trúc dữ liệu và
+                                giải thuật, mạng máy tính, phát triển ứng dụng phần mềm và kỹ năng giải quyết vấn đề
+                                thực tiễn.
+                            </p>
+
+                            <!-- Chỉ số học tập (GPA & Tín chỉ & Tiến độ %) -->
+                            <div class="edu-metrics">
+                                <div class="edu-metric-card">
+                                    <div class="edu-metric-icon gpa">
+                                        <i class="fa-solid fa-chart-line"></i>
+                                    </div>
+                                    <div class="edu-metric-info">
+                                        <span class="edu-metric-label">Điểm GPA Tích Lũy</span>
+                                        <div class="edu-metric-value">
+                                            <span>3.08</span>
+                                            <span class="edu-metric-max">/ 4.0</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="edu-metric-card">
+                                    <div class="edu-metric-icon credits">
+                                        <i class="fa-solid fa-book-bookmark"></i>
+                                    </div>
+                                    <div class="edu-metric-info">
+                                        <span class="edu-metric-label">Tín Chỉ Hoàn Thành</span>
+                                        <div class="edu-metric-value">
+                                            <span>40</span>
+                                            <span class="edu-metric-max">/ 120 tín chỉ</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="edu-metric-card">
+                                    <div class="edu-metric-icon progress-icon">
+                                        <i class="fa-solid fa-chart-pie"></i>
+                                    </div>
+                                    <div class="edu-metric-info">
+                                        <span class="edu-metric-label">Tiến Độ Toàn Khóa</span>
+                                        <div class="edu-metric-value">
+                                            <span>33.3%</span>
+                                            <span class="edu-metric-max">Năm 1 &rarr; 2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Thanh tiến độ học tập chi tiết & Các mốc năm học -->
+                            <div class="edu-progress-box">
+                                <div class="edu-progress-top">
+                                    <div class="edu-progress-label-wrap">
+                                        <i class="fa-solid fa-bars-progress"></i>
+                                        <span>Tiến độ hoàn thành chương trình đại học</span>
+                                    </div>
+                                    <div class="edu-progress-pct-badge">
+                                        <span class="pct-val">33.3%</span>
+                                        <span class="pct-detail">(40 / 120 Tín chỉ)</span>
+                                    </div>
+                                </div>
+
+                                <div class="edu-progress-track">
+                                    <div class="edu-progress-bar-fill" style="width: 33.3%;">
+                                        <span class="edu-progress-shine"></span>
+                                    </div>
+                                </div>
+
+                                <div class="edu-milestones">
+                                    <div class="milestone-step done">
+                                        <div class="milestone-indicator"><i class="fa-solid fa-circle-check"></i></div>
+                                        <div class="milestone-text">
+                                            <span class="m-year">Năm 1 (2025 – 2026)</span>
+                                            <span class="m-status">40 tín chỉ nền tảng & toán</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="milestone-step active">
+                                        <div class="milestone-indicator"><i class="fa-solid fa-circle-dot"></i></div>
+                                        <div class="milestone-text">
+                                            <span class="m-year">Năm 2 (2026 – 2027)</span>
+                                            <span class="m-status">Cơ sở ngành & Lập trình Web</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="milestone-step planned">
+                                        <div class="milestone-indicator"><i class="fa-regular fa-circle"></i></div>
+                                        <div class="milestone-text">
+                                            <span class="m-year">Năm 3 (2027 – 2028)</span>
+                                            <span class="m-status">Chuyên sâu & Thực tập</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="milestone-step planned">
+                                        <div class="milestone-indicator"><i class="fa-regular fa-circle"></i></div>
+                                        <div class="milestone-text">
+                                            <span class="m-year">Năm 4 (2028 – 2029)</span>
+                                            <span class="m-status">Khóa luận & Tốt nghiệp</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mục tiêu phát triển Developer (Ngắn hạn & Dài hạn) -->
+                <div class="career-goals-section">
+                    <div class="goals-section-header">
+                        <div class="goals-tag">
+                            <i class="fa-solid fa-compass"></i>
+                            <span>CAREER ROADMAP</span>
+                        </div>
+                        <h3 class="goals-main-title">
+                            Mục Tiêu Phát Triển Trở Thành <span class="gradient-text">Developer</span>
+                        </h3>
+                        <p class="goals-desc">
+                            Lộ trình từng bước hoàn thiện tư duy lập trình và kỹ năng thực tế để trở thành một kỹ sư phần mềm xuất sắc trong tương lai.
+                        </p>
+                    </div>
+
+                    <div class="goals-grid">
+                        <!-- Thẻ 1: Mục tiêu ngắn hạn -->
+                        <div class="goal-card glass-card short-term-card">
+                            <div class="goal-card-header">
+                                <div class="goal-icon-badge cyan-badge">
+                                    <i class="fa-solid fa-bolt-lightning"></i>
+                                </div>
+                                <div class="goal-card-title-group">
+                                    <div class="goal-phase-pill cyan-pill">Giai đoạn 2025 – 2027</div>
+                                    <h4 class="goal-card-heading">Mục Tiêu Ngắn Hạn</h4>
+                                    <p class="goal-target-role"><i class="fa-solid fa-terminal"></i> Frontend / Web Developer Intern</p>
+                                </div>
+                            </div>
+
+                            <ul class="goal-checklist">
+                                <li>
+                                    <span class="check-icon cyan"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Làm chủ công nghệ Web hiện đại:</strong>
+                                        <p>Nắm vững HTML5, CSS3/SCSS (Flexbox, Grid, Responsive UI), JavaScript ES6+ và xử lý bất đồng bộ (Async/Await, Promise).</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon cyan"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Chinh phục Framework Frontend & Backend:</strong>
+                                        <p>Học sâu React.js xây dựng Single Page Application (SPA), tìm hiểu Node.js (Express) hoặc Python (FastAPI) để kết nối RESTful API.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon cyan"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Xây dựng 3-5 dự án Portfolio thực tế:</strong>
+                                        <p>Phát triển các sản phẩm hoàn chỉnh đưa lên GitHub (Portfolio cá nhân, Web thương mại điện tử, Ứng dụng quản lý công việc).</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon cyan"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Rèn luyện Thuật toán & Nâng cao GPA:</strong>
+                                        <p>Luyện tập Cấu trúc dữ liệu & Giải thuật trên LeetCode/HackerRank, phấn đấu duy trì GPA &ge; 3.2 để đạt danh hiệu sinh viên Giỏi.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon cyan"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Tìm kiếm cơ hội thực tập doanh nghiệp:</strong>
+                                        <p>Ứng tuyển thành công vị trí Web Developer Intern / Frontend Intern vào cuối năm 2 hoặc đầu năm 3 để cọ xát môi trường doanh nghiệp.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Thẻ 2: Mục tiêu dài hạn -->
+                        <div class="goal-card glass-card long-term-card">
+                            <div class="goal-card-header">
+                                <div class="goal-icon-badge purple-badge">
+                                    <i class="fa-solid fa-chess-knight"></i>
+                                </div>
+                                <div class="goal-card-title-group">
+                                    <div class="goal-phase-pill purple-pill">Giai đoạn 2027 – 2030+</div>
+                                    <h4 class="goal-card-heading">Mục Tiêu Dài Hạn</h4>
+                                    <p class="goal-target-role"><i class="fa-solid fa-code-branch"></i> Fullstack / Senior Software Engineer</p>
+                                </div>
+                            </div>
+
+                            <ul class="goal-checklist">
+                                <li>
+                                    <span class="check-icon purple"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Tốt nghiệp cử nhân CNTT loại Giỏi tại UTH:</strong>
+                                        <p>Bảo vệ thành công đồ án tốt nghiệp với giải pháp phần mềm có giá trị thực tiễn và tính khả thi cao.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon purple"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Trở thành Fullstack Developer chuyên nghiệp:</strong>
+                                        <p>Làm chủ kiến trúc hệ thống (Clean Architecture, Microservices), xử lý cơ sở dữ liệu lớn (SQL & NoSQL) và tối ưu hóa hiệu năng cao.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon purple"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Làm chủ Cloud Computing & DevOps:</strong>
+                                        <p>Ứng dụng thuần thục Docker, Kubernetes, CI/CD pipeline và hạ tầng đám mây (AWS / Google Cloud Platform) để vận hành sản phẩm.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon purple"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Ngoại ngữ & Hội nhập quốc tế:</strong>
+                                        <p>Sử dụng tiếng Anh chuyên ngành lưu loát (IELTS 6.5+ / TOEIC 800+), tự tin làm việc trong môi trường đa quốc gia hoặc Remote quốc tế.</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <span class="check-icon purple"><i class="fa-solid fa-circle-check"></i></span>
+                                    <div class="check-content">
+                                        <strong>Định hướng Tech Lead & Đóng góp cộng đồng:</strong>
+                                        <p>Dẫn dắt các nhóm kỹ thuật, mentor các bạn sinh viên thế hệ sau và tích cực đóng góp mã nguồn mở (Open Source).</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. KỸ NĂNG & CÔNG CỤ (SKILLS & TOOLS) ==================== -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">03. TECH STACK & SKILLS</span>
+                    <h2 class="section-title">Kỹ Năng & Công Cụ</h2>
+                    <div class="title-underline"></div>
+                </div>
+
+                <div class="skills-grid">
+
+                    <!-- Nhóm 1: Kỹ năng kỹ thuật -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-box blue">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3>Kỹ năng Kỹ thuật</h3>
+                        </div>
+                        <p class="skill-card-desc">Ngôn ngữ lập trình và công nghệ giao diện đang sử dụng:</p>
+
+                        <div class="skill-bars">
+                            <div class="skill-bar-item">
+                                <div class="skill-info">
+                                    <span><i class="fa-brands fa-python"></i> Python</span>
+                                    <span class="skill-tag">Logic / App</span>
+                                </div>
+                                <div class="progress-line"><span class="fill python-fill"></span></div>
+                            </div>
+
+                            <div class="skill-bar-item">
+                                <div class="skill-info">
+                                    <span><i class="fa-solid fa-microchip"></i> C++</span>
+                                    <span class="skill-tag">Thuật toán / OOP</span>
+                                </div>
+                                <div class="progress-line"><span class="fill cpp-fill"></span></div>
+                            </div>
+
+                            <div class="skill-bar-item">
+                                <div class="skill-info">
+                                    <span><i class="fa-brands fa-html5"></i> HTML5</span>
+                                    <span class="skill-tag">Cấu trúc Web</span>
+                                </div>
+                                <div class="progress-line"><span class="fill html-fill"></span></div>
+                            </div>
+
+                            <div class="skill-bar-item">
+                                <div class="skill-info">
+                                    <span><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                                    <span class="skill-tag">Giao diện / Hiệu ứng</span>
+                                </div>
+                                <div class="progress-line"><span class="fill css-fill"></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nhóm 2: Công cụ phát triển -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-box purple">
+                                <i class="fa-solid fa-screwdriver-wrench"></i>
+                            </div>
+                            <h3>Công cụ & Môi trường</h3>
+                        </div>
+                        <p class="skill-card-desc">Các IDE và hệ thống quản lý phiên bản phục vụ phát triển dự án:</p>
+
+                        <div class="badge-list">
+                            <div class="tool-badge">
+                                <i class="fa-brands fa-git-alt tool-icon git-color"></i>
+                                <div>
+                                    <h5>Git</h5>
+                                    <span>Quản lý mã nguồn & Nhánh</span>
+                                </div>
+                            </div>
+
+                            <div class="tool-badge">
+                                <i class="fa-solid fa-laptop-code tool-icon vscode-color"></i>
+                                <div>
+                                    <h5>Visual Studio Code</h5>
+                                    <span>Code Editor chính</span>
+                                </div>
+                            </div>
+
+                            <div class="tool-badge">
+                                <i class="fa-solid fa-rocket tool-icon antigravity-color"></i>
+                                <div>
+                                    <h5>Antigravity IDE</h5>
+                                    <span>Môi trường phát triển hiện đại</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nhóm 3: Kỹ năng mềm -->
+                    <div class="skill-card glass-card">
+                        <div class="skill-card-top">
+                            <div class="skill-icon-box green">
+                                <i class="fa-solid fa-people-group"></i>
+                            </div>
+                            <h3>Kỹ năng Mềm</h3>
+                        </div>
+                        <p class="skill-card-desc">Yếu tố giúp phối hợp đội nhóm và vận hành công việc trơn tru:</p>
+
+                        <ul class="soft-skill-list">
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <div>
+                                    <strong>Làm việc nhóm (Teamwork)</strong>
+                                    <p>Chủ động hỗ trợ thành viên, chia sẻ công việc và phối hợp qua Git.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <div>
+                                    <strong>Giao tiếp hiệu quả (Communication)</strong>
+                                    <p>Lắng nghe tích cực và trình bày ý tưởng rõ ràng, mạch lạc.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-circle-check"></i>
+                                <div>
+                                    <strong>Quản lý thời gian (Time Management)</strong>
+                                    <p>Sắp xếp thứ tự ưu tiên khoa học, đảm bảo tiến độ học tập và dự án.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. LIÊN HỆ (CONTACT SECTION) ==================== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-box glass-card">
+                    <span class="section-subtitle">04. GET IN TOUCH</span>
+                    <h2 class="section-title">Kết Nối Với Tôi</h2>
+                    <p class="contact-slogan">
+                        "Luôn sẵn sàng học hỏi, hợp tác trong các dự án thú vị và kết nối với cộng đồng yêu công nghệ!"
+                    </p>
+
+                    <div class="contact-cards">
+                        <!-- Email -->
+                        <a href="mailto:hutothegod@gmail.com" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <span>Email</span>
+                                <strong>hutothegod@gmail.com</strong>
+                            </div>
+                        </a>
+
+                        <!-- Số điện thoại -->
+                        <a href="tel:0345540068" class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone-volume"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <span>Số điện thoại</span>
+                                <strong>0345540068</strong>
+                            </div>
+                        </a>
+
+                        <!-- Địa chỉ -->
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <span>Địa chỉ</span>
+                                <strong>TP. Hồ Chí Minh, Việt Nam</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>© 2026 <strong>Phạm Hồng Thái</strong>. Thiết kế & phát triển với đam mê công nghệ.</p>
+            <p class="footer-quote">"First, solve the problem. Then, write the code."</p>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // 1. Hiệu ứng gõ chữ (Typewriter)
+        const quotes = [
+            "Code không chỉ là những dòng lệnh chạy được, mà là cách tôi biến những ý tưởng không tưởng thành giải pháp thực tế.",
+            "Hành trình vạn dặm của một kỹ sư phần mềm luôn bắt đầu từ dòng lệnh Hello World đầu tiên.",
+            "First, solve the problem. Then, write the code. — John Johnson"
+        ];
+        let quoteIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeElement = document.getElementById("typewriter");
+
+        function runTypewriter() {
+            const currentQuote = quotes[quoteIndex];
+            if (isDeleting) {
+                typeElement.textContent = currentQuote.substring(0, charIndex--);
+            } else {
+                typeElement.textContent = currentQuote.substring(0, charIndex++);
+            }
+
+            let speed = isDeleting ? 20 : 40;
+
+            if (!isDeleting && charIndex === currentQuote.length + 1) {
+                speed = 2400; // Dừng lại đọc câu nói
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                quoteIndex = (quoteIndex + 1) % quotes.length;
+                speed = 400;
+            }
+            setTimeout(runTypewriter, speed);
+        }
+
+        // 2. Bật/tắt Menu trên điện thoại
+        const menuBtn = document.getElementById("mobile-menu-btn");
+        const navLinks = document.getElementById("nav-links");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+        });
+
+        // Đóng menu khi bấm vào link trên điện thoại
+        document.querySelectorAll(".nav-item").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+            });
+        });
+
+        // 3. Tải và xem trước ảnh đại diện trực tiếp khi chọn file
+        const avatarInput = document.getElementById("avatar-input");
+        if (avatarInput) {
+            avatarInput.addEventListener("change", function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (event) {
+                        document.querySelectorAll(".profile-avatar-target").forEach(img => {
+                            img.src = event.target.result;
+                        });
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", runTypewriter);
+    </script>
+</body>
+
+</html>
