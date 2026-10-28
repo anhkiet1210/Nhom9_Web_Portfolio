@@ -1,0 +1,569 @@
+/* ================== 1. BIẾN MÀU & THIẾT LẬP CHUNG ================== */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --warm-beige: #F3EEE3;
+    --vintage-ivory: #FAF7F0;
+    --retro-charcoal: #252822;
+    --crt-teal: #0E7774;
+    --retro-terracotta: #D97852;
+    --arcade-gold: #D8AF4F;
+    --vintage-olive: #80866A;
+    --shadow-color: #252822;
+}
+a, 
+button, 
+.os-tab, 
+.tab-btn, 
+.filter-btn, 
+.nav-links a {
+    cursor: url('../assets/icons/mouse.svg'), pointer !important;
+}
+
+/* Biến màu cho Dark Mode */
+body.dark-mode {
+    --warm-beige: #121212;
+    --vintage-ivory: #1E1E1E;
+    --retro-charcoal: #E0E0E0;
+    --crt-teal: #4db8b8;
+    --retro-terracotta: #e07a5f;
+    --arcade-gold: #f4a261;
+    --vintage-olive: #8d99ae;
+    --shadow-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background-color: var(--warm-beige);
+    background-image: radial-gradient(var(--vintage-olive) 1px, transparent 1px);
+    background-size: 24px 24px;
+    color: var(--retro-charcoal);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: url('../assets/icons/cursor-minimal.svg'), auto; 
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.section-padding {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--crt-teal);
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px var(--shadow-color);
+    margin-bottom: 30px;
+}
+
+/* Nút bấm chung */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--arcade-gold);
+    color: var(--shadow-color);
+    border: 2px solid var(--retro-charcoal);
+    padding: 10px 20px;
+    font-family: inherit;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.btn-primary:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+/* Bổ sung hiệu ứng khi lướt chuột qua nút bấm chung */
+.btn-primary:hover, .os-btn:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+    background-color: var(--crt-teal);
+    color: var(--warm-beige);
+}
+
+/* Bỏ hover cho nút đang Active ở project-filter để không bị loạn màu */
+.filter-btn.active:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+/* ================== 2. HEADER & NAVBAR ================== */
+#header {
+    font-size: 1.4rem;
+    background-color: var(--warm-beige);
+    border-top: 6px solid var(--vintage-olive);
+    border-bottom: 2px solid var(--retro-charcoal);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    background-color: var(--vintage-ivory);
+    color: var(--retro-charcoal);
+    border: 2px solid var(--retro-charcoal);
+    padding: 4px 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--retro-charcoal);
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.nav-links a:hover {
+    color: var(--crt-teal);
+}
+
+#darkModeToggle {
+    background-color: var(--vintage-ivory);
+    border: 2px solid var(--retro-charcoal);
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#darkModeToggle:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+/* Ẩn Hamburger mặc định trên PC */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    border: 2px solid var(--retro-charcoal);
+    padding: 5px;
+    background-color: var(--vintage-ivory);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--retro-charcoal);
+}
+
+/* ================== 3. HERO & ABOUT ================== */
+.hero-pixel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: var(--vintage-olive);
+    margin-bottom: 25px;
+}
+.highlight {
+    color: var(--retro-terracotta);
+}
+.blink-cursor {
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+.pixel-avatar {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    background-color: var(--vintage-ivory);
+    border: 4px solid var(--retro-charcoal);
+    box-shadow: 8px 8px 0px var(--shadow-color);
+}
+
+.pixel-box {
+    background-color: var(--vintage-ivory);
+    border: 2px solid var(--retro-charcoal);
+    padding: 25px;
+    box-shadow: 6px 6px 0px var(--shadow-color);
+    font-size: 1.4rem;
+}
+
+/* ================== 4. RESUME (TABS) ================== */
+.tab-button {
+    display: flex;
+    gap: 5px;
+    margin-bottom: -2px;
+}
+
+.tab-btn {
+    background-color: var(--warm-beige);
+    color: var(--retro-charcoal);
+    border: 2px solid var(--retro-charcoal);
+    border-bottom: none;
+    padding: 8px 20px;
+    font-family: inherit;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-btn.active {
+    background-color: var(--vintage-ivory);
+    color: var(--crt-teal);
+    padding-top: 12px;
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: rgba(14, 119, 116, 0.1);
+}
+
+.tab-content {
+    display: none;
+    background-color: var(--vintage-ivory);
+    border: 2px solid var(--retro-charcoal);
+    padding: 25px;
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    font-size: 1.3rem;
+}
+.tab-content.active { display: block; }
+
+/* ================== 5. SKILLS & PROJECTS ================== */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+.skill-card {
+    background-color: var(--vintage-ivory);
+    border: 2px solid var(--retro-charcoal);
+    padding: 8px 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, color 0.2s;
+}
+
+.skill-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    background-color: var(--crt-teal);
+    color: var(--warm-beige);
+}
+
+.project-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+.filter-btn {
+    background-color: var(--vintage-ivory);
+    color: var(--retro-charcoal);
+    border: 2px solid var(--retro-charcoal);
+    padding: 6px 15px;
+    font-family: inherit;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+.filter-btn.active, .filter-btn:active {
+    background-color: var(--crt-teal);
+    color: var(--warm-beige);
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.project-card {
+    background-color: var(--vintage-ivory);
+    border: 2px solid var(--retro-charcoal);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0px var(--shadow-color);
+}
+
+.project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid var(--retro-charcoal);
+    margin-bottom: 15px;
+}
+.project-title {
+    font-size: 1.6rem;
+    color: var(--crt-teal);
+    margin-bottom: 10px;
+}
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+.project-technologies {
+    font-size: 1rem;
+    color: var(--retro-terracotta);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--crt-teal);
+    color: var(--warm-beige);
+    padding: 5px 15px;
+    text-decoration: none;
+    border: 2px solid var(--retro-charcoal);
+    box-shadow: 2px 2px 0px var(--shadow-color);
+}
+
+.project-link img {
+    filter: invert(99%) sepia(51%) saturate(161%) hue-rotate(334deg) brightness(112%) contrast(89%);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.project-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+/* ================== 6. CONTACT TABS (RETRO UI) ================== */
+.tabs-container { margin-bottom: 30px; }
+.tab-buttons {
+    display: flex;
+    gap: 4px;
+    margin-bottom: -2px;
+    position: relative;
+    z-index: 2;
+    flex-wrap: wrap;
+}
+.os-tab {
+    background-color: var(--vintage-ivory);
+    color: var(--retro-charcoal);
+    border: 2px solid var(--retro-charcoal);
+    border-bottom: none;
+    padding: 8px 16px;
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.os-tab.active {
+    background-color: var(--crt-teal);
+    color: var(--warm-beige);
+    padding-top: 12px;
+}
+.tab-panel-container {
+    background-color: var(--vintage-ivory);
+    border: 2px solid var(--retro-charcoal);
+    border-top: 6px solid var(--crt-teal);
+    position: relative;
+    z-index: 1;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+.panel-row {
+    padding: 20px 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    display: block;
+}
+.panel-row:last-child { border-bottom: none; }
+.text-muted {
+    color: var(--vintage-olive);
+    font-size: 1.1rem;
+}
+.email-highlight, .content-highlight {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--retro-charcoal);
+    text-decoration: none;
+}
+.email-highlight { border-bottom: 4px solid var(--crt-teal); }
+
+.action-buttons { display: flex; gap: 15px; }
+.os-btn {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px 20px;
+    border: 2px solid var(--retro-charcoal);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    background-color: var(--vintage-ivory);
+    color: var(--retro-charcoal);
+}
+.os-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px var(--shadow-color);
+}
+.os-btn.btn-primary {
+    background-color: var(--crt-teal);
+    color: var(--warm-beige);
+}
+.os-tab.active img, .os-btn.btn-primary img {
+    filter: invert(99%) sepia(51%) saturate(161%) hue-rotate(334deg) brightness(112%) contrast(89%);
+}
+
+/* Nút Lên Đầu Trang */
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--arcade-gold);
+    border: 2px solid var(--retro-charcoal);
+    padding: 10px;
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    cursor: pointer;
+    z-index: 999;
+}
+
+/* ================== 7. RESPONSIVE (MOBILE) ================== */
+@media (max-width: 768px) {
+    .hamburger-menu { display: flex; }
+    
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        background-color: var(--vintage-ivory);
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid var(--retro-charcoal);
+        transition: left 0.3s ease;
+    }
+    .nav-links.active { left: 0; }
+    
+    .hero-pixel {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .panel-row { padding: 15px; }
+}
+
+/* ================== DANH SÁCH HỌC VẤN & KINH NGHIỆM ================== */
+.retro-list {
+    list-style: none;
+    padding: 0;
+}
+
+.retro-list li {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 4px solid var(--crt-teal); /* Đường kẻ dọc màu xanh ngọc */
+    position: relative;
+}
+
+.retro-list li:last-child {
+    margin-bottom: 0;
+}
+
+/* Tạo dấu bullet hình vuông Pixel */
+.retro-list li::before {
+    content: '■';
+    position: absolute;
+    left: -11px; /* Căn giữa viên vuông lên đường kẻ */
+    top: 0;
+    color: var(--retro-terracotta); /* Màu cam đất làm điểm nhấn */
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.retro-list .time {
+    font-size: 1.2rem;
+    color: var(--vintage-olive);
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: var(--font-mono); /* Nếu bạn có link font Space Mono */
+}
+
+.retro-list .title {
+    font-size: 1.8rem;
+    color: var(--retro-charcoal);
+    margin-bottom: 5px;
+}
+
+.retro-list .subtitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--crt-teal);
+    margin-bottom: 10px;
+}
+
+.retro-footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--vintage-ivory);
+    border-top: 4px dashed var(--vintage-olive);
+    color: var(--retro-charcoal);
+    font-size: 1.4rem;
+    margin-top: 50px;
+    box-shadow: inset 0px 4px 0px rgba(0,0,0,0.05);
+}

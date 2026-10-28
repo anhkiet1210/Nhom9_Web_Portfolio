@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta name="description" content="Portfolio của Huỳnh Anh Kiệt - Junior Developer. Xem các dự án và kỹ năng lập trình Frontend của tôi.">
+    <meta property="og:title" content="Huỳnh Anh Kiệt | Web Developer Portfolio">
+    <meta property="og:description" content="Portfolio mang phong cách Retro / Windows 95.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio của Kiệt</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/main.js" defer></script>
+    <script src="js/portfolio-data.js" defer></script>
+</head>
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#resume">Học vấn</a></li>
+                <li><a href="#skills">Kỹ năng</a></li>
+                <li><a href="#projects">Dự án</a></li>
+                <li><a href="#contact">Liên hệ</a></li>
+            </ul>
+            <button id="darkModeToggle" aria-label="Toggle Dark Mode">
+                <img src="./assets/icons/moon.svg" alt="Toggle Dark Mode" width="24" height="24">
+            </button>
+            <div class="hamburger-menu" id="mobile-menu-btn">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="section-padding hero-pixel">
+            <div class="hero-content">
+                <h1>Xin chào, tôi là <span class="highlight">Huỳnh Anh Kiệt</span><span class="blink-cursor">_</span></h1>
+                <h2>Web Developer</h2>
+                <a href="#projects" class="btn btn-primary">Xem dự án</a>
+            </div>
+            <div class="hero-image">
+                <img src="./assets/images/avatar.jpg" alt="Ảnh đại diện" class="pixel-avatar" width="48" height="48">
+            </div>
+        </section>
+
+        <section id="about" class="section-padding">
+            <h2 class="section-title">Giới thiệu</h2>
+            <div class="pixel-box">
+                <p>Mình yêu thích lập trình và xây dựng những sản phẩm công nghệ hữu ích. 
+                    Mình luôn cố gắng học hỏi, trau dồi kỹ năng mỗi ngày để từng bước trở thành một Kỹ sư phần mềm.
+                </p>
+            </div>
+        </section>
+
+        <section id="resume" class="section-padding">
+            <h2 class="section-title">Học vấn & Kinh nghiệm</h2>
+            <div class="tabs-container">
+                <div class="tab-button">
+                    <button class="tab-btn active" data-target="education">Học vấn</button>
+                    <button class="tab-btn" data-target="experience">Kinh nghiệm</button>
+                </div>
+
+                <div class="tab-content active" id="education">
+                    <ul class="retro-list">
+                        <li>
+                            <div class="time">2024 - ...</div>
+                            <h3 class="title">Sinh viên Công nghệ Thông tin</h3>
+                            <div class="subtitle">Đại học GTVT TP. Hồ Chí Minh</div>
+                            <p>Chuyên ngành Công nghệ thông tin.</p>
+                        </li>
+                        <li>
+                            <div class="time">2024 - ...</div>
+                            <h3 class="title">Chứng chỉ Web Frontend</h3>
+                            <div class="subtitle">F8 Fullstack Edu / Nền tảng tự học</div>
+                            <p>Hoàn thành xuất sắc các dự án thực tế sử dụng HTML, CSS và JavaScript.</p>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="tab-content" id="experience">
+                    <ul class="retro-list">
+                        <li>
+                            <div class="time">06/2024 - Hiện tại</div>
+                            <h3 class="title">Junior Frontend Developer</h3>
+                            <div class="subtitle">Công ty ABC Tech (Mẫu)</div>
+                            <p>Phát triển giao diện web thân thiện người dùng. Tối ưu hóa hiệu suất trang (PageSpeed) và làm việc chặt chẽ với team Design qua Figma.</p>
+                        </li>
+                        <li>
+                            <div class="time">01/2024 - 05/2024</div>
+                            <h3 class="title">Thực tập sinh Web Developer</h3>
+                            <div class="subtitle">Công ty XYZ Solutions (Mẫu)</div>
+                            <p>Tham gia xây dựng các trang Landing Page bằng HTML/CSS/JS thuần. Học hỏi quy trình làm việc Agile/Scrum và quản lý mã nguồn bằng Git.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-padding">
+            <h2 class="section-title">Kỹ năng</h2>
+            <div class="skills-grid" id="skillsContainer"></div>
+        </section>
+
+        <section id="projects" class="section-padding">
+            <h2 class="section-title">Dự án</h2>
+            <div class="project-filter" id="projectFilter">
+                <button class="filter-btn active" data-filter="all">Tất cả</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+                <button class="filter-btn" data-filter="app">App</button>
+            </div>
+            <div class="projects-grid" id="projectsContainer"></div>
+        </section>
+
+        <section id="contact" class="section-padding">
+            <h2 class="section-title">Liên hệ</h2>
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="os-tab active" data-tab="tab-email">
+                        <span><img src="./assets/icons/gmail.svg" alt="Gmail Icon" width="24" height="24"></span>
+                        EMAIL
+                    </button>
+                    <button class="os-tab" data-tab="tab-linkedin">
+                        <span><img src="./assets/icons/linkedin-2.svg" alt="LinkedIn Icon" width="24" height="24"></span>
+                        LINKEDIN
+                    </button>
+                    <button class="os-tab" data-tab="tab-github">
+                        <span><img src="./assets/icons/github.svg" alt="GitHub Icon" width="24" height="24"></span>
+                        GITHUB
+                    </button>
+                    <button class="os-tab" data-tab="tab-resume">
+                        <span><img src="./assets/icons/file-text.svg" alt="Resume Icon" width="24" height="24"></span>
+                        RESUME
+                    </button>
+                </div>
+
+                <div class="tab-panel-container">
+                    <div class="tab-panel active" id="tab-email">
+                        <div class="panel-row text-muted">Liên hệ nhanh đến Kiệt</div>
+                        <div class="panel-row">
+                            <a href="mailto:huynhanhkiet457@gmail.com" class="email-highlight">huynhanhkiet457@gmail.com</a>
+                        </div>
+                        <div class="panel-row action-buttons">
+                            <a href="mailto:huynhanhkiet457@gmail.com">
+                                <button class="os-btn btn-primary">
+                                    <span><img src="./assets/icons/gmail.svg" alt="Gmail Icon" width="24" height="24"></span> Gửi
+                                </button>
+                            </a>
+
+                            <button class="os-btn btn-primary" id="copyEmailBtn">
+                                <span><img src="./assets/icons/copy.svg" alt="Copy Icon" width="24" height="24"></span> Sao chép
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-linkedin">
+                        <div class="panel-row text-muted">Kinh nghiệm làm việc và thư giới thiệu</div>
+                        <div class="panel-row">
+                            <span class="content-highlight">in/huynhanhkiet123</span>
+                        </div>
+                        <div class="panel-row action-buttons">
+                            <a href="https://www.linkedin.com/in/huynhanhkiet123" class="os-btn btn-primary" target="_blank">
+                                Mở LinkedIn <span><img src="./assets/icons/link.svg" alt="Link Icon" width="24" height="24"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-github">
+                        <div class="panel-row text-muted">Các dự án</div>
+                        <div class="panel-row">
+                            <span class="content-highlight">anhkiet1210</span>
+                        </div>
+                        <div class="panel-row action-buttons">
+                            <a href="https://github.com/anhkiet1210" class="os-btn btn-primary" target="_blank">
+                                Mở GitHub <span><img src="./assets/icons/link.svg" alt="Link Icon" width="24" height="24"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="tab-panel" id="tab-resume">
+                        <div class="panel-row text-muted">Một trang PDF</div>
+                        <div class="panel-row">
+                            <span class="content-highlight">resume.pdf</span>
+                        </div>
+                        <div class="panel-row action-buttons">
+                            <a href="./assets/docs/resume.pdf" download="resume.pdf" class="os-btn btn-primary">
+                                Tải CV <span><img src="./assets/icons/download.svg" alt="Download Icon" width="24" height="24"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <button id="scrollToTopBtn" aria-label="Lên đầu trang" style="display: none;">
+        <img src="./assets/icons/arrow-big-up.svg" alt="Up" width="24" height="24">
+    </button>
+
+    <footer class="retro-footer">
+        <p>© 2024 Huỳnh Anh Kiệt.</p>
+        <p>Built with <span style="color: var(--retro-terracotta);">♥</span> in Retro Style.</p>
+    </footer>
+</body>
+</html>
