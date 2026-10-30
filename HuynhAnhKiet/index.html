@@ -35,12 +35,34 @@
     <main>
         <section id="hero" class="section-padding hero-pixel">
             <div class="hero-content">
-                <h1>Xin chào, tôi là <span class="highlight">Huỳnh Anh Kiệt</span><span class="blink-cursor">_</span></h1>
+                <h1>Xin chào, <br>tôi là <span class="highlight">Huỳnh Anh Kiệt</span><span class="blink-cursor">_</span></h1>
                 <h2>Web Developer</h2>
-                <a href="#projects" class="btn btn-primary">Xem dự án</a>
+                
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">Xem dự án</a>
+                    <a href="./docs/resume.pdf" download="resume.pdf" class="btn btn-primary btn-secondary">
+                        Tải CV <span><img src="./assets/icons/download.svg" alt="Download" width="20" height="20"></span>
+                    </a>
+                </div>
             </div>
+
             <div class="hero-image">
-                <img src="./assets/images/avatar.jpg" alt="Ảnh đại diện" class="pixel-avatar" width="48" height="48">
+                <div class="retro-tv">
+                    <div class="tv-antenna"></div>
+                    
+                    <div class="tv-box">
+                        <div class="tv-screen-wrapper">
+                            <img src="./assets/images/avatar.jpg" alt="Ảnh đại diện" class="tv-avatar">
+                            <div class="crt-overlay"></div>
+                        </div>
+                        
+                        <div class="tv-controls">
+                            <div class="tv-dial"></div>
+                            <div class="tv-dial small"></div>
+                            <div class="tv-speaker"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -59,21 +81,23 @@
                 <div class="tab-button">
                     <button class="tab-btn active" data-target="education">Học vấn</button>
                     <button class="tab-btn" data-target="experience">Kinh nghiệm</button>
+                    <button class="tab-btn" data-target="awards">Giải thưởng</button>
+                    <button class="tab-btn" data-target="hobbies">Sở thích</button>
                 </div>
 
                 <div class="tab-content active" id="education">
                     <ul class="retro-list">
                         <li>
-                            <div class="time">2024 - ...</div>
-                            <h3 class="title">Sinh viên Công nghệ Thông tin</h3>
-                            <div class="subtitle">Đại học GTVT TP. Hồ Chí Minh</div>
+                            <div class="time">2024 - Hiện tại</div>
+                            <h3 class="title">Sinh viên Công nghệ thông tin</h3>
+                            <div class="subtitle">Đại học Giao Thông Vận Tải thành phố Hồ Chí Minh</div>
                             <p>Chuyên ngành Công nghệ thông tin.</p>
                         </li>
                         <li>
-                            <div class="time">2024 - ...</div>
+                            <div class="time">2024</div>
                             <h3 class="title">Chứng chỉ Web Frontend</h3>
                             <div class="subtitle">F8 Fullstack Edu / Nền tảng tự học</div>
-                            <p>Hoàn thành xuất sắc các dự án thực tế sử dụng HTML, CSS và JavaScript.</p>
+                            <p>Hoàn thành xuất sắc các dự án sử dụng HTML, CSS và JavaScript.</p>
                         </li>
                     </ul>
                 </div>
@@ -91,6 +115,29 @@
                             <h3 class="title">Thực tập sinh Web Developer</h3>
                             <div class="subtitle">Công ty XYZ Solutions (Mẫu)</div>
                             <p>Tham gia xây dựng các trang Landing Page bằng HTML/CSS/JS thuần. Học hỏi quy trình làm việc Agile/Scrum và quản lý mã nguồn bằng Git.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="awards">
+                    <ul class="retro-list">
+                        <li>
+                            <div class="time">Hiện tại</div>
+                            <h3 class="title">Chưa có</h3>
+                            <p>Mình đang nỗ lực học tập và trau dồi từng ngày để có thể bổ sung những thành tích tự hào vào mục này trong tương lai gần!</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="tab-content" id="hobbies">
+                    <ul class="retro-list">
+                        <li>
+                            <h3 class="title">Retro Gaming & Pixel Art</h3>
+                            <p>Khám phá các tựa game cổ điển trên hệ máy NES/SNES và tập tành vẽ đồ họa Pixel lúc rảnh rỗi.</p>
+                        </li>
+                        <li>
+                            <h3 class="title">Âm nhạc Synthwave</h3>
+                            <p>Thích nghe các bản nhạc mang âm hưởng thập niên 80 để tăng cường sự tập trung khi viết code.</p>
                         </li>
                     </ul>
                 </div>
@@ -136,21 +183,29 @@
 
                 <div class="tab-panel-container">
                     <div class="tab-panel active" id="tab-email">
-                        <div class="panel-row text-muted">Liên hệ nhanh đến Kiệt</div>
-                        <div class="panel-row">
-                            <a href="mailto:huynhanhkiet457@gmail.com" class="email-highlight">huynhanhkiet457@gmail.com</a>
-                        </div>
-                        <div class="panel-row action-buttons">
-                            <a href="mailto:huynhanhkiet457@gmail.com">
-                                <button class="os-btn btn-primary">
-                                    <span><img src="./assets/icons/gmail.svg" alt="Gmail Icon" width="24" height="24"></span> Gửi
-                                </button>
-                            </a>
-
-                            <button class="os-btn btn-primary" id="copyEmailBtn">
-                                <span><img src="./assets/icons/copy.svg" alt="Copy Icon" width="24" height="24"></span> Sao chép
-                            </button>
-                        </div>
+                        <form id="contactForm" class="retro-form">
+                            <div class="panel-row">
+                                <label for="senderName">Họ và tên:</label>
+                                <input type="text" id="senderName" class="os-input" placeholder="Nhập tên của bạn">
+                                <span class="error-msg" id="nameError" style="color: red; font-size: 0.8rem; display: block;"></span>
+                            </div>
+                            
+                            <div class="panel-row">
+                                <label for="senderEmail">Email:</label>
+                                <input type="email" id="senderEmail" class="os-input" placeholder="name@example.com">
+                                <span class="error-msg" id="emailError" style="color: red; font-size: 0.8rem; display: block;"></span>
+                            </div>
+                            
+                            <div class="panel-row">
+                                <label for="senderMessage">Lời nhắn:</label>
+                                <textarea id="senderMessage" class="os-input" rows="4" placeholder="Nhập nội dung..."></textarea>
+                                <span class="error-msg" id="messageError" style="color: red; font-size: 0.8rem; display: block;"></span>
+                            </div>
+                            
+                            <div class="panel-row action-buttons">
+                                <button type="submit" class="os-btn btn-primary">Gửi tin nhắn</button>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="tab-panel" id="tab-linkedin">
@@ -183,7 +238,7 @@
                             <span class="content-highlight">resume.pdf</span>
                         </div>
                         <div class="panel-row action-buttons">
-                            <a href="./assets/docs/resume.pdf" download="resume.pdf" class="os-btn btn-primary">
+                            <a href="./docs/resume.pdf" download="resume.pdf" class="os-btn btn-primary">
                                 Tải CV <span><img src="./assets/icons/download.svg" alt="Download Icon" width="24" height="24"></span>
                             </a>
                         </div>

@@ -144,4 +144,67 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault(); // Ngăn trình duyệt reload trang
+
+            // Lấy giá trị input
+            const name = document.getElementById('senderName').value.trim();
+            const email = document.getElementById('senderEmail').value.trim();
+            const message = document.getElementById('senderMessage').value.trim();
+
+            // Lấy các thẻ báo lỗi
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const messageError = document.getElementById('messageError');
+
+            // Reset thông báo lỗi
+            nameError.textContent = '';
+            emailError.textContent = '';
+            messageError.textContent = '';
+
+            let isValid = true;
+
+            // 1. Kiểm tra Tên
+            if (name === '') {
+                nameError.textContent = 'Vui lòng nhập họ và tên.';
+                isValid = false;
+            }
+
+            // 2. Kiểm tra Email bằng Regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === '') {
+                emailError.textContent = 'Vui lòng nhập email.';
+                isValid = false;
+            } else if (!emailRegex.test(email)) {
+                emailError.textContent = 'Email không đúng định dạng.';
+                isValid = false;
+            }
+
+            // 3. Kiểm tra Lời nhắn
+            if (message === '') {
+                messageError.textContent = 'Vui lòng nhập lời nhắn.';
+                isValid = false;
+            }
+
+            // Xử lý khi dữ liệu hợp lệ
+            if (isValid) {
+                // 1. Khai báo email người nhận (email của bạn)
+                const targetEmail = 'huynhanhkiet457@gmail.com';
+                
+                // 2. Tạo tiêu đề và nội dung email, sử dụng encodeURIComponent để mã hóa khoảng trắng và ký tự đặc biệt
+                const subject = encodeURIComponent(`[Portfolio] Liên hệ từ ${name}`);
+                const body = encodeURIComponent(`Họ và tên: ${name}\nEmail: ${email}\n\nNội dung lời nhắn:\n${message}`);
+                
+                // 3. Mở ứng dụng gửi mail
+                window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+                
+                // 4. Xóa trắng form sau khi xử lý xong
+                contactForm.reset(); 
+            }
+        });
+    }
 });

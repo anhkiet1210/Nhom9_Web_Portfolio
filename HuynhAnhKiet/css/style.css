@@ -567,3 +567,171 @@ main {
     margin-top: 50px;
     box-shadow: inset 0px 4px 0px rgba(0,0,0,0.05);
 }
+
+/* ================== 9. RETRO TV AVATAR ================== */
+.retro-tv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    transform: translateY(-20px); /* Kéo TV lên một chút cho cân đối với chữ */
+}
+
+/* Vẽ râu ăng-ten */
+.tv-antenna {
+    width: 80px;
+    height: 35px;
+    position: relative;
+}
+.tv-antenna::before, .tv-antenna::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 4px;
+    height: 45px;
+    background-color: var(--retro-charcoal);
+}
+.tv-antenna::before {
+    left: 10px;
+    transform: rotate(-30deg);
+}
+.tv-antenna::after {
+    right: 10px;
+    transform: rotate(30deg);
+}
+
+/* Vỏ ngoài của TV */
+.tv-box {
+    background-color: var(--arcade-gold); /* Màu vàng hoài cổ */
+    border: 4px solid var(--retro-charcoal);
+    padding: 15px;
+    box-shadow: 10px 10px 0px var(--shadow-color);
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.2s;
+}
+.tv-box:hover {
+    transform: translate(-2px, -2px); /* Hiệu ứng nảy nhẹ khi rê chuột vào TV */
+}
+
+/* Màn hình TV */
+.tv-screen-wrapper {
+    position: relative;
+    width: 220px;
+    height: 200px;
+    background-color: #111;
+    border: 6px solid var(--retro-charcoal);
+    border-radius: 12px; /* Bo góc màn hình giống TV lồi CRT */
+    overflow: hidden;
+    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.9); /* Đổ bóng bên trong tạo độ sâu */
+}
+
+/* Ảnh đại diện bên trong TV */
+.tv-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.1) brightness(0.9) sepia(0.2); /* Chỉnh ảnh hơi ám vàng cũ kỹ */
+}
+
+/* Bảng điều khiển (Dials & Loa) */
+.tv-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40px;
+    gap: 12px;
+}
+
+/* Nút vặn */
+.tv-dial {
+    width: 30px;
+    height: 30px;
+    background-color: var(--vintage-ivory);
+    border: 3px solid var(--retro-charcoal);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+}
+.tv-dial.small {
+    width: 20px;
+    height: 20px;
+}
+/* Vạch đánh dấu trên nút vặn */
+.tv-dial::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 8px;
+    background-color: var(--retro-charcoal);
+}
+
+/* Lỗ loa (Speaker grill) */
+.tv-speaker {
+    flex-grow: 1;
+    width: 100%;
+    background-image: radial-gradient(var(--retro-charcoal) 2px, transparent 2px);
+    background-size: 8px 8px; /* Lưới chấm bi đen làm lỗ loa */
+    border: 2px solid var(--retro-charcoal);
+}
+
+/* Keyframes cho hiệu ứng nhấp nháy màn hình */
+@keyframes tvFlicker {
+    0% { opacity: 0.95; }
+    50% { opacity: 1; }
+    100% { opacity: 0.95; }
+}
+
+/* ================== 8. RETRO FORM & INPUT ================== */
+.retro-form {
+    padding: 10px 0;
+}
+
+.retro-form label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--retro-charcoal);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.os-input {
+    width: 100%;
+    padding: 10px;
+    font-family: inherit; /* Kế thừa font VT323 */
+    font-size: 1.3rem;
+    background-color: var(--warm-beige);
+    color: var(--retro-charcoal);
+    border: 2px solid var(--retro-charcoal);
+    /* Tạo hiệu ứng ô nhập liệu lõm xuống (sunken) kiểu Windows 95 */
+    box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.2), inset -2px -2px 0px rgba(255, 255, 255, 0.5);
+    outline: none;
+    transition: background-color 0.2s, border-color 0.2s;
+    resize: vertical; /* Cho phép kéo dãn textarea theo chiều dọc */
+}
+
+.os-input::placeholder {
+    color: var(--vintage-olive);
+    opacity: 0.8;
+}
+
+.os-input:focus {
+    background-color: var(--vintage-ivory);
+    border-color: var(--crt-teal);
+}
+
+/* Fix màu nền input khi ở chế độ Dark Mode */
+body.dark-mode .os-input:focus {
+    background-color: #2a2d27; 
+}
+
+.error-msg {
+    margin-top: 6px;
+    color: var(--retro-terracotta) !important; /* Dùng màu cam đất của theme thay vì red mặc định */
+    font-weight: bold;
+}
