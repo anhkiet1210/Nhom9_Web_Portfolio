@@ -1,200 +1,311 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group 10 Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nguyễn Quốc Huy | Portfolio & Digital CV</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Nền gradient tối */
-            color: white;
-            text-align: center;
-            min-height: 100vh;
-            padding: 50px 20px;
-        }
-
-        .header {
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            color: #00ff99;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
-        }
-
-        .header p {
-            color: #d1d5db;
-            font-size: 1.1rem;
-        }
-
-        .members {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .member {
-            padding: 40px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .member:hover {
-            border-color: #00ff99;
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 255, 153, 0.2);
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .avatar {
-            font-size: 60px;
-            margin-bottom: 15px;
-            background: rgba(255, 255, 255, 0.1);
-            width: 100px;
-            height: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        .member:hover .avatar {
-            transform: scale(1.1);
-        }
-
-        .member h2 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        .desc {
-            color: #aaa;
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
-
-        footer {
-            margin-top: 60px;
-            color: #9ca3af;
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 850px) {
-            .members {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 500px) {
-            .members {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <!-- File CSS riêng -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="header">
-        <h1>GROUP 10 PORTFOLIO</h1>
-        <p>Khám phá hồ sơ năng lực của 6 thành viên trong nhóm</p>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#home" class="brand">
+        <div class="brand-icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <div class="brand-text">
+          <strong>Nguyễn Quốc Huy</strong>
+          <span>UTH • IT STUDENT</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Menu"><i class="fa-solid fa-bars" id="menuIcon"></i></button>
     </div>
 
-    <div class="members">
-        <!-- Thành viên 1 -->
-        <a href="./HuynhAnhKiet/index.html" class="member">
-            <div class="avatar">
-                <img src="./avatar/HuynhAnhKiet.jpg" alt="Huỳnh Anh Kiệt">
-            </div>
-            <h2>Huỳnh Anh Kiệt</h2>
-            <p class="desc">Xem chi tiết Portfolio</p>
-        </a>
-
-        <!-- Thành viên 2 -->
-        <a href="./Pham_Hong_Thai/index.html" class="member">
-            <div class="avatar">
-                <img src="./avatar/Thai.png" alt="Phạm Hồng Thái" onerror="this.outerHTML='👨‍🎨'">
-            </div>
-            <h2>Phạm Hồng Thái</h2>
-            <p class="desc">Xem chi tiết Portfolio</p>
-        </a>
-
-        <!-- Thành viên 3 -->
-        <a href="./TuNgocToan/TuNgocToan.html" class="member">
-            <div class="avatar">
-                <img src="./TuNgocToan/Avatar.jpg" alt="Từ Ngọc Toàn" onerror="this.outerHTML='🕵️‍♂️'">
-            </div>
-            <h2>Từ Ngọc Toàn</h2>
-            <p class="desc">Xem chi tiết Portfolio</p>
-        </a>
-
-        <!-- Thành viên 4 -->
-        <a href="./NguyenQuocHuy/index.html" class="member">
-            <div class="avatar">
-                <img src="NguyenQuocHuy/avatar.jpg" alt="Thành Viên 4" onerror="this.outerHTML='👩‍💻'">
-            </div>
-            <h2>Nguyễn Quốc Huy</h2>
-            <p class="desc">Xem chi tiết Portfolio</p>
-        </a>
-
-        <!-- Thành viên 5 -->
-        <a href="./LuongThanhToa/index.html" class="member">
-            <div class="avatar">
-                <img src="./LuongThanhToa/images/avata.jpg" alt="Thành Viên 5" onerror="this.outerHTML='🥷'">
-            </div>
-            <h2>Tên Thành Viên 5</h2>
-            <p class="desc">Xem chi tiết Portfolio</p>
-        </a>
-
-        <!-- Thành viên 6 -->
-        <a href="./member6/index.html" class="member">
-            <div class="avatar">
-                <img src="./avatar/member6.jpg" alt="Thành Viên 6" onerror="this.outerHTML='🦸‍♂️'">
-            </div>
-            <h2>Tên Thành Viên 6</h2>
-            <p class="desc">Xem chi tiết Portfolio</p>
-        </a>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
     </div>
+  </header>
 
-    <footer>
-        <p>&copy; 2026 Group 10. All rights reserved.</p>
-    </footer>
+  <!-- ============ HERO ============ -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <h2>Xin chào,</h2>
+        <h1>mình là <span>Huy</span></h1>
+        <!-- Dòng gõ chữ tự động: chữ đầu tiên viết sẵn trong HTML để vẫn hiển thị nếu JS lỗi -->
+        <h3><span id="typing">Sinh viên Công nghệ Thông tin</span><span class="cursor">|</span></h3>
+
+        <p>
+          Sinh viên năm 3 tại <strong>Đại học Giao thông Vận tải TP.HCM (UTH)</strong>.
+          Yêu thích phát triển web, xây dựng cơ sở dữ liệu với
+          <span class="tag">T-SQL</span> <span class="tag">Python</span> <span class="tag">Docker</span>
+          và ứng dụng công nghệ AI.
+        </p>
+
+        <div class="btn-row">
+          <a href="#projects" class="btn btn-primary">View Work</a>
+          <a href="#about" class="btn btn-outline">Về mình</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="mailto:nguyenquochuy3206@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:0813714282" title="Điện thoại"><i class="fa-solid fa-phone"></i></a>
+          <small>| nguyenquochuy3206@gmail.com</small>
+        </div>
+      </div>
+
+      <div class="avatar-wrap">
+        <div class="avatar-frame">
+          <img src="Avatar.jpg" id="userAvatar" alt="Nguyễn Quốc Huy - Sinh viên UTH" onerror="handleAvatarError(this)">
+          <label class="avatar-upload" title="Đổi ảnh đại diện">
+            <i class="fa-solid fa-camera"></i>
+            <input type="file" id="avatarInput" accept="image/*">
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about" class="section alt">
+    <div class="container">
+      <div class="section-label"><span>// About Me</span></div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3 class="section-title">Khát vọng trở thành kỹ sư phần mềm thực chiến &amp; sáng tạo</h3>
+          <p>
+            Mình là <strong>Nguyễn Quốc Huy</strong>, hiện là sinh viên năm 3 tại
+            <strong>Trường Đại học Giao thông Vận tải TP.HCM (UTH)</strong>.
+            Mình luôn nỗ lực nắm vững nền tảng khoa học máy tính: cấu trúc dữ liệu, giải thuật, mạng máy tính và quản trị cơ sở dữ liệu.
+          </p>
+          <p>
+            Bên cạnh việc viết code với <strong>Python, JavaScript và T-SQL</strong>, mình đưa <strong>Docker</strong>
+            vào quy trình đóng gói ứng dụng và khai thác <strong>AI Tools</strong> để tăng tốc phân tích, thử nghiệm và tối ưu giải pháp.
+          </p>
+
+          <div class="stats">
+            <div class="stat"><b>UTH</b><span>ĐH GTVT TP.HCM</span></div>
+            <div class="stat"><b>Năm 3</b><span>Sinh viên CNTT</span></div>
+            <div class="stat"><b>2006</b><span>Năm sinh</span></div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h4><i class="fa-solid fa-id-card"></i> Thông tin cá nhân</h4>
+
+          <div class="info-row">
+            <i class="fa-solid fa-user"></i>
+            <div><small>Họ và tên</small><span>Nguyễn Quốc Huy</span></div>
+          </div>
+          <div class="info-row">
+            <i class="fa-solid fa-cake-candles"></i>
+            <div><small>Ngày sinh</small><span>03/02/2006</span></div>
+          </div>
+          <div class="info-row">
+            <i class="fa-solid fa-envelope"></i>
+            <div><small>Email</small><a href="mailto:nguyenquochuy3206@gmail.com">nguyenquochuy3206@gmail.com</a></div>
+          </div>
+          <div class="info-row">
+            <i class="fa-solid fa-phone"></i>
+            <div><small>Số điện thoại</small><a href="tel:0813714282">0813 714 282</a></div>
+          </div>
+          <div class="info-row">
+            <i class="fa-solid fa-school"></i>
+            <div><small>Trường</small><span>Đại học Giao thông Vận tải TP.HCM</span></div>
+          </div>
+          <div class="info-row">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <div><small>Hiện tại</small><span>Sinh viên năm 3</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-label"><span>// Technical Skills</span></div>
+      <h3 class="section-title">Công nghệ &amp; Kỹ năng trang bị</h3>
+
+      <div class="skills-grid">
+        <div class="skill">
+          <div class="skill-icon"><i class="fa-brands fa-python"></i></div>
+          <h4>Python</h4>
+          <p>Lập trình hướng đối tượng, scripting xử lý dữ liệu và backend căn bản.</p>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class="fa-brands fa-js"></i></div>
+          <h4>JavaScript</h4>
+          <p>ES6+, DOM, Async/Await, Fetch API và tương tác web hiện đại.</p>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class="fa-brands fa-html5"></i></div>
+          <h4>HTML5 &amp; CSS3</h4>
+          <p>Flexbox, Grid, giao diện responsive và Semantic Web.</p>
+        </div>
+        <div class="skill">
+          <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+          <h4>T-SQL / Database</h4>
+          <p>Thiết kế bảng chuẩn 3NF, Stored Procedure, Function, Trigger và Index.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section id="projects" class="section alt">
+    <div class="container">
+      <div class="section-label"><span>// Selected Works</span></div>
+      <h3 class="section-title">Dự án &amp; Sản phẩm tiêu biểu</h3>
+
+      <div class="projects-grid">
+
+        <div class="project">
+          <div class="project-body">
+            <div class="project-meta"><b>Web &amp; Database</b><span>2026</span></div>
+            <h4>Cổng Quản Lý Đào Tạo &amp; Sinh Viên</h4>
+            <p>Hệ thống quản lý thông tin học tập, bảng điểm và đăng ký học phần. Xử lý ràng buộc tín chỉ bằng Stored Procedure và Trigger trong SQL Server.</p>
+            <div class="chips"><span class="tag">HTML/CSS/JS</span><span class="tag">Python</span><span class="tag">T-SQL</span></div>
+          </div>
+          <div class="project-foot">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source Code</a>
+            <span>UTH Assignment</span>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project-body">
+            <div class="project-meta"><b>T-SQL Database</b><span>2026</span></div>
+            <h4>Thiết Kế CSDL Vận Tải &amp; Logistics</h4>
+            <p>Mô hình hóa CSDL quản lý vận chuyển container, phân luồng tuyến đường và tối ưu truy vấn bằng Clustered &amp; Non-clustered Index.</p>
+            <div class="chips"><span class="tag">T-SQL</span><span class="tag">SQL Server</span><span class="tag">Database Design</span></div>
+          </div>
+          <div class="project-foot">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source Code</a>
+            <span>Specialized Project</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div><b>Nguyễn Quốc Huy</b> • Sinh viên năm 3 - Đại học Giao thông Vận tải TP.HCM</div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---------- Ảnh đại diện: thử các tên file dự phòng ---------- */
+    let attempts = 0;
+    function handleAvatarError(img) {
+      attempts++;
+      const fallbacks = ['avatar.jpg', 'Avatar.png', 'avatar.png'];
+      if (attempts <= fallbacks.length) {
+        img.src = fallbacks[attempts - 1];
+      } else {
+        img.onerror = null;
+        img.src = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80';
+      }
+    }
+
+    /* ---------- Đổi ảnh đại diện tại chỗ ---------- */
+    document.getElementById('avatarInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => { document.getElementById('userAvatar').src = ev.target.result; };
+      reader.readAsDataURL(file);
+    });
+
+    /* ---------- Menu điện thoại ---------- */
+    const menu = document.getElementById('mobileMenu');
+    const icon = document.getElementById('menuIcon');
+    document.getElementById('menuBtn').addEventListener('click', () => {
+      menu.classList.toggle('open');
+      icon.className = menu.classList.contains('open') ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menu.classList.remove('open');
+      icon.className = 'fa-solid fa-bars';
+    }));
+
+    /* ---------- Đánh dấu mục menu đang xem ---------- */
+    const sections = document.querySelectorAll('section');
+    const links = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = 'home';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    });
+
+    /* ---------- Điểm nhấn 1: dòng phụ gõ chữ tự động ---------- */
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      // Giữ các câu ngắn để trên điện thoại không bị xuống dòng
+      const words = ['Sinh viên Công nghệ Thông tin', 'Yêu thích Web & Database', 'Tò mò về AI & Docker'];
+      const typing = document.getElementById('typing');
+      let w = 0;
+      let c = words[0].length;   // bắt đầu từ câu đã viết sẵn trong HTML
+      let deleting = true;       // dừng một lúc rồi xóa dần
+
+      function type() {
+        const word = words[w];
+        if (!deleting) {
+          c++;
+          typing.textContent = word.slice(0, c);
+          if (c === word.length) { deleting = true; setTimeout(type, 1800); }
+          else { setTimeout(type, 70); }
+        } else {
+          c--;
+          typing.textContent = word.slice(0, c);
+          if (c === 0) { deleting = false; w = (w + 1) % words.length; setTimeout(type, 300); }
+          else { setTimeout(type, 35); }
+        }
+      }
+      setTimeout(type, 1800);
+    }
+
+    /* ---------- Điểm nhấn 3: nội dung hiện dần khi cuộn ---------- */
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.section .container > *').forEach(el => {
+        el.classList.add('reveal');
+        io.observe(el);
+      });
+    }
+  </script>
 </body>
 </html>
