@@ -95,9 +95,11 @@
         }
         .img-container img {
             transition: transform 0.5s ease;
+            filter: none !important;
         }
         .img-container:hover img {
             transform: scale(1.03);
+            filter: none !important;
         }
     </style>
 </head>
@@ -181,7 +183,6 @@
                             src="Avatar.jpg" 
                             alt="Từ Ngọc Toàn Profile Avatar" 
                             class="w-full h-full object-cover transition-all duration-700"
-                            onerror="this.onerror=null; this.src='https://placehold.co/600x800/111111/ffffff?text=Tu+Ngoc+Toan';"
                         />
                     </div>
                     <!-- Frame Accent Corners -->
@@ -362,7 +363,6 @@
                         src="Youtube.jpg" 
                         alt="Youtube Web Project Interface Preview" 
                         class="w-full h-full object-cover object-top min-h-[300px] lg:min-h-[420px]"
-                        onerror="this.onerror=null; this.src='https://placehold.co/1200x675/111111/ffffff?text=Youtube+Project+Preview';"
                     />
                     <div class="absolute top-4 left-4 border border-black bg-white/90 backdrop-blur-sm text-black px-3 py-1 text-xs uppercase tracking-widest">
                         Web Frontend Project
@@ -552,7 +552,7 @@
     <footer class="py-12 bg-black border-t border-neutral-900 text-center text-neutral-500 text-xs tracking-widest uppercase">
         <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <div>
-                &copy; <span id="year"></span> Từ Ngọc Toàn. All Rights Reserved.
+                © <span id="year"></span> Từ Ngọc Toàn. All Rights Reserved.
             </div>
             <div class="flex space-x-6 text-sm">
                 <a href="mailto:toantn7621@ut.edu.vn" class="hover:text-white transition-colors" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
@@ -593,7 +593,7 @@
             });
         });
 
-        // Download CV Mock Action Function
+        // Download CV Action
         function downloadCV() {
             const cvContent = `CURRICULUM VITAE
 Họ và tên: Từ Ngọc Toàn
@@ -630,11 +630,9 @@ DỰ ÁN NỔI BẬT:
             const alertBox = document.getElementById('form-alert');
             const form = document.getElementById('contact-form');
             
-            // Display custom alert message box inside page
             alertBox.classList.remove('hidden');
             form.reset();
 
-            // Auto hide notification after 5 seconds
             setTimeout(() => {
                 alertBox.classList.add('hidden');
             }, 5000);
