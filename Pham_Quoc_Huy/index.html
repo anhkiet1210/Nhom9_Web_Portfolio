@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phạm Quốc Huy – Portfolio</title>
+  <meta name="description" content="Portfolio của Phạm Quốc Huy – sinh viên CNTT UTH, định hướng Frontend Developer." />
+  <meta property="og:title" content="Phạm Quốc Huy – Portfolio" />
+  <meta property="og:description" content="Sinh viên CNTT UTH, đam mê phát triển web." />
+  <meta property="og:image" content="images/me.jpg" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">&lt;YuhPham&gt;</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about"    class="nav-link">Giới thiệu</a></li>
+        <li><a href="#career"   class="nav-link">Mục tiêu</a></li>
+        <li><a href="#skills"   class="nav-link">Kỹ năng</a></li>
+        <li><a href="#education" class="nav-link">Học vấn</a></li>
+        <li><a href="#projects" class="nav-link">Dự án</a></li>
+        <li><a href="#extras"   class="nav-link">Sở thích</a></li>
+        <li><a href="#contact"  class="nav-link">Liên hệ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="btn-icon" title="Chuyển Dark/Light Mode">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" title="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== BANNER / HOME ========== -->
+  <section class="hero" id="home">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <p class="hero-greeting">Xin chào, tôi là</p>
+        <h1 class="hero-name">Phạm Quốc Huy</h1>
+        <h2 class="hero-role">
+          <span class="typing-wrapper">
+            <span id="typed-text"></span><span class="cursor">|</span>
+          </span>
+        </h2>
+        <p class="hero-sub">Sinh viên CNTT – Trường ĐH Giao thông Vận tải TP.HCM (UTH)<br />Đam mê xây dựng giao diện web đẹp và đáp ứng nhu cầu người dùng tốt theo xu hướng hiện đại.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">Xem dự án</a>
+          <a href="#contact"  class="btn btn-outline">Liên hệ tôi</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/yuhpham293" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="mailto:pquochuy.293@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-ring">
+          <img src="images/avatar.jpg" alt="Phạm Quốc Huy" id="hero-img"
+               onerror="this.src='https://ui-avatars.com/api/?name=Pham+Quoc+Huy&size=300&background=6366f1&color=fff&font-size=0.33'" />
+        </div>
+        <a href="#contact" class="avatar-badge"><span class="status-dot"></span> Đang tìm thực tập Frontend</a>
+        <ul class="avatar-facts">
+          <li><i class="fas fa-graduation-cap"></i> UTH · K24 · Năm 3</li>
+          <li><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh</li>
+          <li><i class="fas fa-language"></i> IELTS 6.5 (mục tiêu 2027)</li>
+        </ul>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Cuộn xuống"><i class="fas fa-chevron-down"></i></a>
+  </section>
+  </header>
+
+  <main>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">Giới thiệu <span>bản thân</span></h2>
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="images/me.jpg" alt="Phạm Quốc Huy"
+               onerror="this.src='https://ui-avatars.com/api/?name=Pham+Quoc+Huy&size=400&background=6366f1&color=fff&font-size=0.33'" />
+        </div>
+        <div class="about-content">
+          <h3>Phạm Quốc Huy</h3>
+          <p class="about-tag"><i class="fas fa-graduation-cap"></i> Sinh viên năm 3 – CNTT – UTH (K24)</p>
+          <p class="about-tag"><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh, Việt Nam</p>
+          <p class="about-desc">
+            Tôi là sinh viên năm 3 ngành CNTT (khóa K24) tại Trường Đại học Giao thông Vận tải TP.HCM.
+            Tôi có đam mê với phát triển web, đặc biệt là Frontend Development.
+            Tôi thích đá bóng, nghe nhạc và nấu ăn trong thời gian rảnh, đồng thời luôn tìm kiếm cơ hội gặp gỡ những người đi trước để học hỏi kinh nghiệm ( biết nhậu ^_^ ) cũng như mở rộng thêm các kiến thức, công nghệ mới để đáp ứng tốt hơn trong học tập và công việc sau này ở thời đại phát triển nhanh chóng của công nghệ.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <i class="fas fa-user"></i>
+              <div>
+                <span class="label">Họ tên</span>
+                <span class="value">Phạm Quốc Huy</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-university"></i>
+              <div>
+                <span class="label">Trường</span>
+                <span class="value">UTH – TP.HCM</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-code-branch"></i>
+              <div>
+                <span class="label">Định hướng</span>
+                <span class="value">Frontend → Full Stack</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-language"></i>
+              <div>
+                <span class="label">Ngoại ngữ</span>
+                <span class="value">Tiếng Anh cơ bản</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-comments"></i>
+              <div>
+                <span class="label">Ưu điểm</span>
+                <span class="value">Giao tiếp tốt</span>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-heart"></i>
+              <div>
+                <span class="label">Sở thích</span>
+                <span class="value">Bóng đá</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAREER GOAL ========== -->
+  <section class="section section-alt" id="career">
+    <div class="container">
+      <h2 class="section-title">Mục tiêu <span>nghề nghiệp</span></h2>
+      <div class="career-grid">
+        <div class="career-card">
+          <div class="career-icon"><i class="fas fa-rocket"></i></div>
+          <h3>Ngắn hạn (1–2 năm)</h3>
+          <p>Hoàn thiện kỹ năng HTML/CSS/JavaScript nâng cao, thành thạo ReactJS và xây dựng các dự án Frontend hoàn chỉnh. Tìm kiếm vị trí thực tập tại công ty công nghệ uy tín.</p>
+        </div>
+        <div class="career-card career-card--highlight">
+          <div class="career-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>Trung hạn (3–4 năm)</h3>
+          <p>Mở rộng sang Backend với Node.js / Express, nắm vững database (SQL & NoSQL) để trở thành Full Stack Developer. Đóng góp cho các dự án thực tế có tác động xã hội.</p>
+        </div>
+        <div class="career-card">
+          <div class="career-icon"><i class="fas fa-star"></i></div>
+          <h3>Dài hạn (5+ năm)</h3>
+          <p>Trở thành Senior Full Stack Engineer, lead nhóm phát triển sản phẩm và chia sẻ kiến thức với cộng đồng lập trình viên Việt Nam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">Kỹ năng <span>chuyên môn</span></h2>
+      <div class="skills-tabs">
+        <button class="tab-btn active" data-tab="tech">Công nghệ</button>
+        <button class="tab-btn" data-tab="soft">Kỹ năng mềm</button>
+        <button class="tab-btn" data-tab="tools">Công cụ</button>
+      </div>
+
+      <!-- Tech Skills -->
+      <div class="tab-content active" id="tab-tech">
+        <div class="skills-grid">
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span><i class="fab fa-html5 icon-html"></i> HTML5</span>
+              <span>60%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="60"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span><i class="fab fa-css3-alt icon-css"></i> CSS3</span>
+              <span>50%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="50"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span><i class="fab fa-js-square icon-js"></i> JavaScript</span>
+              <span>40%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="40"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span><i class="fab fa-java icon-java"></i> Java (cơ bản)</span>
+              <span>30%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="30"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span><i class="fab fa-react icon-react"></i> ReactJS (đang học)</span>
+              <span>10%</span>
+            </div>
+            <div class="skill-bar"><div class="skill-progress" data-width="10"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="tab-content" id="tab-soft">
+        <div class="soft-skills-grid">
+          <div class="soft-skill-card">
+            <i class="fas fa-comments"></i>
+            <h4>Giao tiếp tốt</h4>
+            <p>Khả năng trình bày ý tưởng rõ ràng, lắng nghe và hợp tác hiệu quả trong nhóm.</p>
+          </div>
+          <div class="soft-skill-card">
+            <i class="fas fa-users"></i>
+            <h4>Làm việc nhóm</h4>
+            <p>Có tinh thần đồng đội, hỗ trợ thành viên và cùng đạt mục tiêu chung.</p>
+          </div>
+          <div class="soft-skill-card">
+            <i class="fas fa-brain"></i>
+            <h4>Tư duy logic</h4>
+            <p>Phân tích vấn đề có hệ thống, đề xuất giải pháp tối ưu và sáng tạo.</p>
+          </div>
+          <div class="soft-skill-card">
+            <i class="fas fa-clock"></i>
+            <h4>Quản lý thời gian</h4>
+            <p>Lên kế hoạch học tập và làm việc hiệu quả, đảm bảo deadline.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="tab-content" id="tab-tools">
+        <div class="tools-grid">
+          <div class="tool-badge"><i class="fab fa-git-alt"></i> Git / GitHub</div>
+          <div class="tool-badge"><i class="fas fa-code"></i> VS Code / Visual Studio</div>
+          <div class="tool-badge"><i class="fas fa-database"></i> MySQL</div>
+          <div class="tool-badge"><i class="fas fa-paint-brush"></i> Canva</div>
+          <div class="tool-badge"><i class="fas fa-robot"></i> AI Tools </div>
+          <div class="tool-badge"><i class="fas fa-terminal"></i> HTML / CSS / JavaScript</div>
+          <div class="tool-badge"><i class="fab fa-react"></i> Java</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EDUCATION / EXPERIENCE ========== -->
+  <section class="section section-alt" id="education">
+    <div class="container">
+      <h2 class="section-title">Học vấn & <span>Hoạt động</span></h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fas fa-graduation-cap"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2024 – nay</span>
+            <h3>Đại học Giao thông Vận tải TP.HCM (UTH)</h3>
+            <p class="timeline-role">Sinh viên ngành Công nghệ Thông tin</p>
+            <p>GPA hiện tại: <strong>2.8 / 4.0</strong> · Học lực: Khá<br />
+               Chuyên sâu phát triển web và lập trình ứng dụng.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"><i class="fas fa-language"></i></div>
+          <div class="timeline-content">
+            <span class="timeline-year">2026 – nay</span>
+            <h3>Luyện thi IELTS</h3>
+            <p class="timeline-role">Mục tiêu: IELTS 6.5 trong năm 2027</p>
+            <p>Đang học và luyện thi IELTS, tập trung vào 4 kỹ năng Nghe – Nói – Đọc – Viết.
+               Mục tiêu đạt band 6.5 để mở rộng cơ hội việc làm trong môi trường quốc tế.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 class="section-title">Dự án <span>đã và đang tham gia</span></h2>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="app">Ứng dụng</button>
+      </div>
+
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project 1: Secondhand Marketplace -->
+        <article class="project-card" data-category="web">
+          <div class="project-img">
+            <img src="images/project-marketplace.svg" alt="Secondhand Marketplace" />
+            <div class="project-overlay">
+              <button class="btn-icon" onclick="openModal('modal1')"><i class="fas fa-expand"></i></button>
+              <a href="https://github.com/anhkiet1210/secondhand-marketplace" target="_blank" class="btn-icon"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+              <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">MySQL</span>
+              <span class="tag tag-status">Đang lên kế hoạch</span>
+            </div>
+            <h3>Ứng dụng Mua Bán Đồ Cũ</h3>
+            <p>Website giúp người dùng tìm kiếm, đăng bán và mua đồ đã qua sử dụng. Dự án đang trong giai đoạn lên kế hoạch; công nghệ dự kiến: Python/Flask, MySQL, JWT.</p>
+            <div class="project-links">
+              <a href="https://github.com/anhkiet1210/secondhand-marketplace" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Network Programming -->
+        <article class="project-card" data-category="app">
+          <div class="project-img">
+            <img src="images/project-network.jpg" alt="Network Programming Project" />
+            <div class="project-overlay">
+              <button class="btn-icon" onclick="openModal('modal2')"><i class="fas fa-expand"></i></button>
+              <a href="https://github.com/HAI-AI-I/PROJECT-NETWORK-PROGRAMMING" target="_blank" class="btn-icon"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Java</span><span class="tag">Socket</span><span class="tag">TCP/IP</span>
+              <span class="tag tag-status">Đã hoàn thành</span>
+            </div>
+            <h3>Dự án Lập trình Mạng</h3>
+            <p>Dự án môn Lập trình Mạng, xây dựng ứng dụng mạng sử dụng Java Socket. Áp dụng giao thức TCP/IP để truyền thông dữ liệu giữa client và server.</p>
+            <div class="project-links">
+              <a href="https://github.com/HAI-AI-I/PROJECT-NETWORK-PROGRAMMING" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+              <a href="https://www.youtube.com/watch?v=MMR2Ktg-Wsw" target="_blank" rel="noopener"><i class="fab fa-youtube"></i> Video demo</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOBBIES & CERTIFICATES ========== -->
+  <section class="section section-alt" id="extras">
+    <div class="container">
+      <h2 class="section-title">Sở thích & <span>Chứng chỉ</span></h2>
+      <div class="extras-grid">
+        <div>
+          <h3 class="extras-heading">Sở thích</h3>
+          <div class="hobby-list">
+            <figure class="hobby-card hobby-photo">
+              <img src="images/vsport-u18.jpg" alt="Đội vô địch giải U18 Nam Trung Bộ 2023 – VSports" loading="lazy" />
+              <figcaption><i class="fas fa-futbol"></i> <strong>Bóng đá</strong> – Vô địch giải U18 Nam Trung Bộ 2023 (VSports)</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div>
+          <h3 class="extras-heading">Chứng chỉ & Giải thưởng</h3>
+          <div class="cert-item"><i class="fas fa-certificate"></i><div><strong>Chưa có chứng chỉ</strong><p>Đang hướng tới IELTS 6.5 trong năm 2027.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Liên hệ <span>với tôi</span></h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Hãy kết nối với tôi!</h3>
+          <p>Tôi luôn sẵn sàng trao đổi về cơ hội thực tập, dự án nhóm hoặc đơn giản là nói chuyện về công nghệ.</p>
+          <ul class="contact-list">
+            <li><i class="fas fa-phone"></i> <a href="tel:0356156163">0356 156 163</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:pquochuy.293@gmail.com">pquochuy.293@gmail.com</a></li>
+            <li><i class="fab fa-github"></i>  <a href="https://github.com/yuhpham293" target="_blank">github.com/yuhpham293</a></li>
+            <li><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh, Việt Nam</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="name">Họ và tên <span class="required">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" />
+            <span class="form-error" id="name-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" />
+            <span class="form-error" id="email-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Chủ đề <span class="required">*</span></label>
+            <input type="text" id="subject" name="subject" placeholder="Cơ hội thực tập / Hợp tác dự án..." />
+            <span class="form-error" id="subject-error"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Tin nhắn <span class="required">*</span></label>
+            <textarea id="message" name="message" rows="5" placeholder="Nội dung tin nhắn của bạn..."></textarea>
+            <span class="form-error" id="message-error"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+          </button>
+          <div class="form-success" id="form-success">
+            <i class="fas fa-check-circle"></i> Cảm ơn bạn! Tin nhắn đã được gửi thành công.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Thiết kế & Phát triển bởi <strong>Phạm Quốc Huy</strong> · CNTT – UTH · 2026</p>
+      <div class="footer-socials">
+        <a href="https://github.com/quochuy293" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:pquochuy.293@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCROLL TO TOP ========== -->
+  <button class="scroll-top" id="scroll-top" title="Lên đầu trang">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- ========== PROJECT MODALS ========== -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div>
+
+  <div class="modal" id="modal1">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <img src="images/project-marketplace.svg" alt="Secondhand Marketplace" />
+    <div class="modal-body">
+      <h3>Ứng dụng Mua Bán Đồ Cũ – Secondhand Marketplace</h3>
+      <p><strong>Công nghệ dự kiến:</strong> HTML · CSS · JavaScript · Bootstrap · Python · Flask · SQLAlchemy · MySQL · JWT · Postman</p>
+      <p>Website giúp người dùng tìm kiếm, đăng bán và mua đồ đã qua sử dụng. Dự án đang trong giai đoạn lên kế hoạch; các tính năng dự kiến gồm xác thực người dùng bằng JWT, quản lý sản phẩm và REST API.</p>
+      <p><strong>Trạng thái:</strong> Đang lên kế hoạch</p>
+      <div class="project-links">
+        <a href="https://github.com/anhkiet1210/secondhand-marketplace" target="_blank" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+    <img src="images/project-network.jpg" alt="Network Programming" />
+    <div class="modal-body">
+      <h3>Dự án Lập trình Mạng – PROJECT-NETWORK-PROGRAMMING</h3>
+      <p><strong>Công nghệ:</strong> Java · Socket Programming · TCP/IP · Multithreading</p>
+      <p>Dự án môn học Lập trình Mạng, xây dựng ứng dụng giao tiếp mạng sử dụng Java Socket. Áp dụng giao thức TCP/IP để truyền thông dữ liệu giữa client và server, xử lý đa luồng để phục vụ nhiều client đồng thời.</p>
+      <p><strong>Vai trò:</strong> Thành viên nhóm phát triển</p>
+      <div class="project-links">
+        <a href="https://github.com/HAI-AI-I/PROJECT-NETWORK-PROGRAMMING" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.youtube.com/watch?v=MMR2Ktg-Wsw" target="_blank" rel="noopener" class="btn btn-outline"><i class="fab fa-youtube"></i> Video demo</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
