@@ -617,26 +617,4 @@ DỰ ÁN NỔI BẬT:
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'CV_Tu_Ngoc_Toan.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
-        // Contact Form Handle Submit
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const alertBox = document.getElementById('form-alert');
-            const form = document.getElementById('contact-form');
-            
-            alertBox.classList.remove('hidden');
-            form.reset();
-
-            setTimeout(() => {
-                alertBox.classList.add('hidden');
-            }, 5000);
-        }
-    </script>
-</body>
-</html>
+            a.
