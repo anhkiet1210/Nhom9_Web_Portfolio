@@ -51,7 +51,8 @@
       <div>
         <h2>Xin chào,</h2>
         <h1>mình là <span>Huy</span></h1>
-        <h3>Sinh viên Công nghệ Thông tin</h3>
+        <!-- Dòng gõ chữ tự động: chữ đầu tiên viết sẵn trong HTML để vẫn hiển thị nếu JS lỗi -->
+        <h3><span id="typing">Sinh viên Công nghệ Thông tin</span><span class="cursor">|</span></h3>
 
         <p>
           Sinh viên năm 3 tại <strong>Đại học Giao thông Vận tải TP.HCM (UTH)</strong>.
@@ -194,7 +195,8 @@
             <a href="https://github.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source Code</a>
             <span>UTH Assignment</span>
           </div>
-      </div>
+        </div>
+
         <div class="project">
           <div class="project-body">
             <div class="project-meta"><b>T-SQL Database</b><span>2026</span></div>
@@ -216,12 +218,11 @@
   <footer class="footer">
     <div class="footer-inner">
       <div><b>Nguyễn Quốc Huy</b> • Sinh viên năm 3 - Đại học Giao thông Vận tải TP.HCM</div>
-    
     </div>
   </footer>
 
   <script>
-  
+    /* ---------- Ảnh đại diện: thử các tên file dự phòng ---------- */
     let attempts = 0;
     function handleAvatarError(img) {
       attempts++;
@@ -234,7 +235,7 @@
       }
     }
 
-    
+    /* ---------- Đổi ảnh đại diện tại chỗ ---------- */
     document.getElementById('avatarInput').addEventListener('change', (e) => {
       const file = e.target.files[0];
       if (!file) return;
@@ -243,6 +244,7 @@
       reader.readAsDataURL(file);
     });
 
+    /* ---------- Menu điện thoại ---------- */
     const menu = document.getElementById('mobileMenu');
     const icon = document.getElementById('menuIcon');
     document.getElementById('menuBtn').addEventListener('click', () => {
@@ -254,13 +256,56 @@
       icon.className = 'fa-solid fa-bars';
     }));
 
-        const sections = document.querySelectorAll('section');
+    /* ---------- Đánh dấu mục menu đang xem ---------- */
+    const sections = document.querySelectorAll('section');
     const links = document.querySelectorAll('.nav-link');
     window.addEventListener('scroll', () => {
       let current = 'home';
       sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
       links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
     });
+
+    /* ---------- Điểm nhấn 1: dòng phụ gõ chữ tự động ---------- */
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!reduceMotion) {
+      // Giữ các câu ngắn để trên điện thoại không bị xuống dòng
+      const words = ['Sinh viên Công nghệ Thông tin', 'Yêu thích Web & Database', 'Tò mò về AI & Docker'];
+      const typing = document.getElementById('typing');
+      let w = 0;
+      let c = words[0].length;   // bắt đầu từ câu đã viết sẵn trong HTML
+      let deleting = true;       // dừng một lúc rồi xóa dần
+
+      function type() {
+        const word = words[w];
+        if (!deleting) {
+          c++;
+          typing.textContent = word.slice(0, c);
+          if (c === word.length) { deleting = true; setTimeout(type, 1800); }
+          else { setTimeout(type, 70); }
+        } else {
+          c--;
+          typing.textContent = word.slice(0, c);
+          if (c === 0) { deleting = false; w = (w + 1) % words.length; setTimeout(type, 300); }
+          else { setTimeout(type, 35); }
+        }
+      }
+      setTimeout(type, 1800);
+    }
+
+    /* ---------- Điểm nhấn 3: nội dung hiện dần khi cuộn ---------- */
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll('.section .container > *').forEach(el => {
+        el.classList.add('reveal');
+        io.observe(el);
+      });
+    }
   </script>
 </body>
 </html>
