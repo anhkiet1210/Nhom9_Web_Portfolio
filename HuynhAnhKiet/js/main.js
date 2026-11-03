@@ -5,6 +5,10 @@ window.loadPortfolioData = function(data) {
     // Hàm này sẽ tự động thực thi ngay khi file portfolio-data.js được tải xong
     renderSkills(data.skills);
     renderProjects(data.projects);
+    renderAwards(data.awards);
+    renderHobbies(data.hobbies);
+    renderExperience(data.experience);
+    renderEducation(data.education);
 };
 
 // 2. LOGIC RENDER KỸ NĂNG VÀ DỰ ÁN
@@ -43,6 +47,86 @@ function renderProjects(projects) {
         `;
     });
     initProjectFilter();
+}
+
+function renderEducation(education) {
+    const eduContainer = document.getElementById('educationContainer');
+    if (!eduContainer || !education) return;
+
+    eduContainer.innerHTML = ''; 
+    
+    education.forEach(edu => {
+        eduContainer.innerHTML += `
+            <li>
+                <div class="time">${edu.time}</div>
+                <h3 class="title">${edu.degree}</h3>
+                <div class="subtitle">${edu.school}</div>
+                <p>${edu.description}</p>
+            </li>
+        `;
+    });
+}
+
+function renderAwards(awards) {
+    const awardsContainer = document.getElementById('awardsContainer');
+    if (!awardsContainer || !awards) return;
+
+    awardsContainer.innerHTML = ''; 
+    
+    awards.forEach(award => {
+        awardsContainer.innerHTML += `
+            <li>
+                <div class="time">${award.year}</div>
+                <h3 class="title">${award.name}</h3>
+                <p>${award.description}</p>
+                
+                <!-- Khung hiển thị ảnh chứng nhận -->
+                <div style="margin-top: 15px; border: 2px solid #475569; border-radius: 8px; overflow: hidden; max-width: 600px;">
+                    <img src="${award.image}" alt="${award.name}" style="width: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                
+                <!-- Nút bấm để xem ảnh kích thước đầy đủ ở tab mới -->
+                <a href="${award.image}" target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 15px; font-size: 0.9rem; padding: 8px 20px;">
+                    Xem ảnh gốc
+                    <img src="./assets/icons/external-link.svg" alt="Link" width="16" height="16" style="vertical-align: middle; margin-left: 5px; filter: invert(1);">
+                </a>
+            </li>
+        `;
+    });
+}
+
+function renderHobbies(hobbies) {
+    const hobbiesContainer = document.getElementById('hobbiesContainer');
+    if (!hobbiesContainer || !hobbies) return;
+
+    hobbiesContainer.innerHTML = ''; 
+    
+    hobbies.forEach(hobby => {
+        hobbiesContainer.innerHTML += `
+            <li>
+                <h3 class="title">${hobby.name}</h3>
+                <p>${hobby.description}</p>
+            </li>
+        `;
+    });
+}
+
+function renderExperience(experience) {
+    const expContainer = document.getElementById('experienceContainer');
+    if (!expContainer || !experience) return;
+
+    expContainer.innerHTML = ''; 
+    
+    experience.forEach(exp => {
+        expContainer.innerHTML += `
+            <li>
+                <div class="time">${exp.time}</div>
+                <h3 class="title">${exp.role}</h3>
+                <div class="subtitle">${exp.company}</div>
+                <p>${exp.description}</p>
+            </li>
+        `;
+    });
 }
 
 // 3. LOGIC BỘ LỌC DỰ ÁN

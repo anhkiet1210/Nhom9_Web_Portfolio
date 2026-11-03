@@ -40,8 +40,8 @@ const members = [
     {
         id: 6,
         name: "Phạm Quốc Huy",
-        avatar: "./PhamQuocHuy/avatar.jpg",
-        portfolioUrl: "./PhamQuocHuy/index.html"
+        avatar: "./Pham_Quoc_Huy/images/avatar.jpg",
+        portfolioUrl: "./Pham_Quoc_Huy/index.html"
     }
 ];
 

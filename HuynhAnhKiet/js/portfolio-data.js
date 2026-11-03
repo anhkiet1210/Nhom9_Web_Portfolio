@@ -56,5 +56,61 @@ loadPortfolioData({
             "githubUrl": "https://github.com/anhkiet1210/vietnam-stock-prediction",
             "technologies": ["Python", "Machine Learning", "Deep Learning"]
         }
+    ],
+
+    "education": [
+        {
+            "time": "2024 - Hiện tại",
+            "degree": "Sinh viên Công nghệ thông tin",
+            "school": "Đại học Giao Thông Vận Tải thành phố Hồ Chí Minh",
+            "description": "Chuyên ngành Công nghệ thông tin."
+        },
+        {
+            "time": "2024",
+            "degree": "Chứng chỉ Web Frontend",
+            "school": "F8 Fullstack Edu / Nền tảng tự học",
+            "description": "Hoàn thành xuất sắc các dự án sử dụng HTML, CSS và JavaScript."
+        }
+    ],
+
+    "experience": [
+        {
+            "time": "09/2024 - Hiện tại",
+            "role": "Frontend Developer (Dự án môn học)",
+            "company": "Đại học GTVT TP.HCM",
+            "description": "Phụ trách thiết kế và lập trình giao diện cho bài tập lớn môn Lập trình Web. Phối hợp với các thành viên khác qua GitHub và áp dụng kiến thức HTML, CSS, JS."
+        },
+        {
+            "time": "01/2024 - 05/2024",
+            "role": "Tự học & Phát triển kỹ năng",
+            "company": "Lộ trình Frontend",
+            "description": "Tự nghiên cứu và hoàn thành lộ trình Frontend. Xây dựng thành công các dự án cá nhân nhỏ để rèn luyện tư duy logic và kỹ năng giải quyết vấn đề."
+        }
+    ],
+
+    "awards": [
+        {
+            "id": 1,
+            "name": "Giải Khuyến Khích HSG Cấp Tỉnh",
+            "year": "2023-2024",
+            "description": "Giấy chứng nhận giải Khuyến khích kỳ thi Học sinh giỏi cấp Tỉnh năm học 2023-2024.",
+            "image": "./assets/images/GCN_HSG.jpg",
+            "certificateUrl": "#" 
+        }
+    ],
+
+    "hobbies": [
+        {
+            "name": "Nghe nhạc & Podcast",
+            "description": "Thích nghe nhạc lofi và các podcast về công nghệ, phát triển bản thân khi rảnh rỗi."
+        },
+        {
+            "name": "Thể thao & Rèn luyện",
+            "description": "Chơi cầu lông và chạy bộ để duy trì sức khỏe sau những giờ ngồi code."
+        },
+        {
+            "name": "Khám phá công nghệ mới",
+            "description": "Thường xuyên đọc bài viết trên Medium, GitHub để cập nhật các xu hướng web mới nhất."
+        }
     ]
 });
